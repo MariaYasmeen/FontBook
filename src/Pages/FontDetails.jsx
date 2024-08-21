@@ -4,6 +4,7 @@ import GlyphsPage from './GlyphsPage';
 import { getFonts } from '../Functions/getGFont'; // Import the getFonts function
 import './Pages.css';
 import TextResizer from '../Components/TextResizer';
+import TextEditor from '../Components/TextEditor';
 
 const FontDetails = () => {
   const { fontFamily } = useParams();
@@ -66,6 +67,7 @@ const FontDetails = () => {
 
       </div>
 
+
       <TextResizer fontFamily={fontDetails.family}/>
       <div className="fontsizecardcont">
       <div class="card">
@@ -108,6 +110,7 @@ const FontDetails = () => {
       </div>
    
      
+<TextEditor  fontFamily={fontDetails.family}/>
     <GlyphsPage fontFamily={fontDetails.family} /> 
    
     </main>

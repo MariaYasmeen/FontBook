@@ -51,3 +51,68 @@
 .text-display-box{
   padding: 35px;
 }
+/* text editor css*/
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for the text editor */
+.text-editor-container {
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Toolbar styling */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.toolbar-button {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.toolbar-button:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+}
+
+/* Font size select styling */
+.font-size-select {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Content editable area styling */
+.editor {
+  border: 1px solid #ddd;
+  padding: 28px;
+  min-height: 350px;
+  background: #ffffff;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-y: auto;
+}
+
+.editor:focus {
+  outline: none;
+}

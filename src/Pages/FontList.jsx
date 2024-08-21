@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getFonts } from '../Functions/getGFont';
 import './Pages.css';
 import FontCard from '../Components/FontCard';
+import { Navbar } from '../Navbar/Navbar';
 
 const FontList = () => {
   const [fonts, setFonts] = useState([]);
@@ -55,6 +56,8 @@ const FontList = () => {
   const totalPages = Math.ceil(fonts.length / fontsPerPage);
 
   return (
+    <>
+    <Navbar />
     <div className="font-list">
       {currentFonts.length > 0 ? (
         currentFonts.map((font, index) => (
@@ -95,6 +98,7 @@ const FontList = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 

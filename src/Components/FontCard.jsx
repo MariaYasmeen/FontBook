@@ -27,7 +27,7 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
     <div className="cardcontainer">
       <div className="card cardscontainer" style={{ backgroundColor: getRandomColor() }}>
         <div className="card-header">
-          <i className="fa-solid fa-heart"></i>
+        <i className="fa-regular fa-heart fa-font"></i>
           <div className="dropdown">
             <a className="btn" role="button" data-bs-toggle="dropdown">
               <i className="fas fa-ellipsis-v"></i>
