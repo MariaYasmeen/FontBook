@@ -14,12 +14,18 @@ const copyToClipboard = (text) => {
   });
 };
 
-const FontCard = ({ heading, googleFontLink }) => {
+const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
+
   const fontDetailsUrl = `http://localhost:3000/fonts/${heading.replace(/ /g, '-')}`;
+  // Function to get a random background color
+  const getRandomColor = () => {
+    const randomIndex = Math.floor(Math.random() * backgroundColors.length);
+    return backgroundColors[randomIndex];
+  };
 
   return (
     <div className="cardcontainer">
-      <div className="card cardscontainer">
+      <div className="card cardscontainer" style={{ backgroundColor: getRandomColor() }}>
         <div className="card-header">
           <i className="fa-solid fa-heart"></i>
           <div className="dropdown">

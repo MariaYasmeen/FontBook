@@ -92,15 +92,22 @@ height: 2.5em;
   padding: 5px;
   background-color: rgb(204, 221, 231);
 }
+.cardheader{
+  margin: 0px !important;
+font-weight: bold;
+}
 .fontsizecardcont{
   padding:  5px 55px 5px 55px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 .fontsizecardcont div{
+  background-color:rgb(250, 246, 246);
   width: auto;
-  padding: 5px;
-  margin: 5px;
+  padding: 8px;
+  border: none;
+  margin: 8px;
 }
 .glyphheading {
   text-align: center;
@@ -129,6 +136,7 @@ height: 2.5em;
 .glypletters:hover {
  color: blue;
 }
+
 .hovered-glyph-container {
   flex: 1;
   display: flex;
@@ -137,7 +145,7 @@ height: 2.5em;
 }
 
 .hovered-glyph {
-  font-size: 15em !important; /* Adjust size as needed */
+  font-size: 12em !important; /* Adjust size as needed */
   
 }
 

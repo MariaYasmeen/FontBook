@@ -18,6 +18,10 @@
   padding: 20px;
 }
 
+.font-size-controls {
+  display: ruby;
+  align-items: center;
+}
 .input-slider-row {
   display: flex;
   flex-direction: row;
@@ -26,32 +30,24 @@
 }
 
 .text-input {
-  margin-right: 20px;
-  padding: 10px;
+  margin-right: 13px;
+  padding: 18px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  flex: 1;
+  border-radius: 29px;
+  flex: 5 8;
+  width: 900px;
 }
 
-.font-size-controls {
-  display: flex;
-  align-items: center;
-}
 
 .font-slider {
   margin-right: 20px;
-  width: 150px;
+  width: 280px;
 }
 
 .font-dropdown {
-  padding: 5px;
+  padding: 9px 4px ;
 }
 
-.text-display-box {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 20px;
-  width: 100%;
-  max-width: 600px;
-  text-align: center;
+.text-display-box{
+  padding: 35px;
 }

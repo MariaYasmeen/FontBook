@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './Components.css';
 
 const TextResizer = ({fontFamily}) => {
-  const [text, setText] = useState('Lorem ipsum dolor sit amet, consectetur adipiscing '); // State for input text
+  const [text, setText] = useState('Think 100 times before you take a decision, But once that decision is taken, stand by it as one man.'); // State for input text
   const [fontSize, setFontSize] = useState(18); // State for font size
-  const fontSizeOptions = [10, 12, 14, 16, 18, 20, 24, 30, 36, 48, 60, 72];
+  const fontSizeOptions = [8, 12, 14, 18, 20, 24, 32, 40, 64, 96, 120, 184, 200];
 
     // Handle slider change
     const handleSliderChange = (e) => {
@@ -30,8 +30,8 @@ const TextResizer = ({fontFamily}) => {
          <div className="font-size-controls">
           <input
             type="range"
-            min="10"
-            max="100"
+            min="8"
+            max="200"
             value={fontSize}
             onChange={handleSliderChange}
             className="font-slider"

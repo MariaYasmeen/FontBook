@@ -9,6 +9,7 @@ const FontDetails = () => {
   const { fontFamily } = useParams();
   const [fontDetails, setFontDetails] = useState(null);
 
+  const typetestertxt = "  Character, courage, industry, and perseverance are the four pillars on which the whole edifice of human life can be built and failure is a word unknown to me.";
   // Function to dynamically load the font
   const loadFont = (fontFamily) => {
     const link = document.createElement('link');
@@ -45,9 +46,9 @@ const FontDetails = () => {
         </p>
         <div className="col-lg-10 mx-auto">
           <p className="lead mb-6" style={{ fontSize: '2.4em' }}>
-            Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
-          </p>
-        </div>
+          I have no doubt that with unity, faith, and discipline we will compare with any nation of the world. You must make up your minds now. We must sink individualism and petty jealousies and make up our minds to serve the people with honesty and faithfulness.  </p>
+            </div>
+        <h6>~ Quid-e-Azam</h6>
 
 
 
@@ -69,38 +70,38 @@ const FontDetails = () => {
       <div className="fontsizecardcont">
       <div class="card">
   <div class="cardheader">
-  Regular 400 at 18px
+ {fontFamily} Regular 400 at 18px
   </div>
-  <div class="cardbody">
-    <p class="card-text" style={{ fontFamily: fontDetails.family, fontSize:"18px", fontWeight:"400" }}>Whereas a common understanding of these rights and freedoms is necessary.</p>
+  <div class="cardbody" style={{ fontFamily: fontDetails.family, fontSize:"18px", fontWeight:"400" }}>
+    <p class="card-text" >{typetestertxt}<h6>~ Quid-e-Azam</h6></p>
+   
   </div>
 </div> 
 <div class="card">
   <div class="cardheader">
-  Regular 400 at 25px
+ {fontFamily} Regular 400 at 32px
   </div>
-  <div class="cardbody">
-    <p class="card-text" style={{ fontFamily: fontDetails.family, fontSize:"25px", fontWeight:"400" }}>No one shall be held in slavery or servitude; slavery and the slave trade shall be prohibited in all their forms.</p>
+  <div class="cardbody" style={{ fontFamily: fontDetails.family, fontSize:"32px", fontWeight:"400"}}>
+    <p class="card-text" >{typetestertxt}<h6>~ Quid-e-Azam</h6></p>
   </div>
   
 </div> 
-      </div>
-      
+      </div>   
       <div className="fontsizecardcont">
       <div class="card">
   <div class="cardheader">
-  Regular 400 at 48px
+ {fontFamily} Bold 700 at 18px
   </div>
-  <div class="cardbody">
-    <p class="card-text" style={{ fontFamily: fontDetails.family, fontSize:"48px", fontWeight:"400" }}>Whereas a common understanding of these rights and freedoms is necessary.</p>
+  <div class="cardbody" style={{ fontFamily: fontDetails.family, fontSize:"18px", fontWeight:"700",  }}>
+    <p class="card-text" >{typetestertxt}<h6>~ Quid-e-Azam</h6></p>
   </div>
 </div> 
 <div class="card">
   <div class="cardheader">
-  Regular 400 at 36px
+ {fontFamily} Bold 700 at 32px
   </div>
-  <div class="cardbody">
-    <p class="card-text" style={{ fontFamily: fontDetails.family, fontSize:"36px", fontWeight:"400" }}>No one shall be held in slavery or servitude; slavery and the slave trade shall be prohibited in all their forms.</p>
+  <div class="cardbody" style={{ fontFamily: fontDetails.family, fontSize:"32px", fontWeight:"700" , textDecoration:"bold"}}>
+    <p class="card-text" >{typetestertxt}<h6>~ Quid-e-Azam</h6></p>
   </div>
   
 </div> 
