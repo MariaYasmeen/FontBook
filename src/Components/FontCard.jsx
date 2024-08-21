@@ -62,13 +62,19 @@ const FontCard = ({ heading, googleFontLink }) => {
             </ul>
           </div>
         </div>
-        <Link to={fontDetailsUrl} className="card-link">
-          <div className="font-card card-body">
-            <h5 className="card-title" style={{ fontFamily: heading }}>
-              {heading}
-            </h5>
-          </div>
-        </Link>
+        <a 
+  href={fontDetailsUrl} 
+  className="card-link" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <div className="font-card card-body">
+    <h5 className="card-title" style={{ fontFamily: heading }}>
+      {heading}
+    </h5>
+  </div>
+</a>
+
       </div>
     </div>
   );

@@ -9,3 +9,40 @@
   text-decoration: none;
   color: black;
 }
+
+/*TextResizer*/
+.text-resizer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.input-slider-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.text-input {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.font-slider {
+  width: 200px;
+}
+
+.text-display-box {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+  min-height: 100px;
+  box-sizing: border-box;
+}

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import GlyphsPage from './GlyphsPage';
 import { getFonts } from '../Functions/getGFont'; // Import the getFonts function
 import './Pages.css';
+import TextResizer from '../Components/TextResizer';
 
 const FontDetails = () => {
   const { fontFamily } = useParams();
@@ -63,6 +64,8 @@ const FontDetails = () => {
         </div> */}
 
       </div>
+
+      <TextResizer fontFamily={fontDetails.family}/>
       <div className="fontsizecardcont">
       <div class="card">
   <div class="cardheader">
