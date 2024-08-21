@@ -112,7 +112,7 @@ const FontDetails = () => {
      
 <TextEditor  fontFamily={fontDetails.family}/>
     <GlyphsPage fontFamily={fontDetails.family} /> 
-   
+   <h2 className='text-center'>Fonts that you may like</h2>
     </main>
   );
 };

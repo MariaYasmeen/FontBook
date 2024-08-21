@@ -67,7 +67,7 @@ export const Navbar = () => {
          <Link to="/mywishlist" className="text-decoration-none position-relative">
             <i className="fa-regular fa-heart"></i>
             <span className="cart-badge">1</span>
-    </Link>
+         </Link>
        
           </div>
         </div>
