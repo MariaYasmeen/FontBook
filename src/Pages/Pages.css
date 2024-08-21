@@ -1,0 +1,170 @@
+/* FontList.css */
+
+.font-item {
+    padding: 1px !important;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+
+  .font-category {
+    font-size: 16px;
+    color: #555;
+  }
+  /* FontList.css */
+  .font-list {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+/*   
+  @media (max-width: 768px) {
+    .font-card {
+      flex: 1 1 calc(50% - 32px); 
+        max-width: calc(50% - 32px);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .font-card {
+      flex: 1 1 100%; 
+           max-width: 100%;
+    }
+  } */
+  
+  
+  .font-link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .font-link:hover {
+    text-decoration: underline;
+  }
+  
+  .font-sample {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* FontList.css */
+
+.font-item {
+    margin-bottom: 10px;
+    padding: 0px;
+    border-radius: 8px;
+  }
+
+  /*font Details CSS*/
+  
+  .font-heading {
+    font-size: 14em;
+    font-weight:100 !important;
+  }
+  
+  .font-description {
+    font-size: 2.6em;
+  }
+.glyphheading{
+  padding: 10px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+.glypletters{
+border: 0.4px solid black;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0px !important;
+width: 2.5em;
+height: 2.5em;
+}
+.glypbox{
+  padding: 10px;
+}/*Glyph container responsive CSS*/
+.glyph-container {
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgb(204, 221, 231);
+}
+.fontsizecardcont{
+  padding:  5px 55px 5px 55px;
+  display: flex;
+  justify-content: center;
+}
+.fontsizecardcont div{
+  width: auto;
+  padding: 5px;
+  margin: 5px;
+}
+.glyphheading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.glyph-box-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.glyphbox {
+  flex: 1.5 1;
+  display: flex;
+  padding: 5px 0px 26px 40px;
+  flex-wrap: wrap;
+  width: 76% ; /* Adjust width as needed */
+}
+
+.glypletters {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.glypletters:hover {
+ color: blue;
+}
+
+.hovered-glyph-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hovered-glyph {
+  font-size: 15em !important; /* Adjust size as needed */
+  
+}
+
+
+/*Pagination CSS*/
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

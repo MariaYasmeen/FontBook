@@ -1,0 +1,11 @@
+.card-link{
+    text-decoration: none !important;
+}
+.card-link .card-container,
+.card-link .card,
+.card-link .card-header,
+.card-link .card-body {
+  /* Ensure these elements inside the link do not inherit unwanted styles */
+  text-decoration: none;
+  color: black;
+}

@@ -1,38 +1,69 @@
-.App {
+.cardscontainer {
+  position: relative;
+  max-width: auto ;
+  border-radius: 10px;
+  border: none !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropdowntxt{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+.card-title {
+  width: 5.3em;
+  font-size: 80px;
+  font-weight: 400 !important;
+  transition: transform 0.2s ease; /* Ensure smooth transitions for both transform and font-size */
+}
+
+.card-title:hover {
+  transform: scale(1.1); /* Scale up by 10% */
+}
+
+.cardscontainer:hover {
+  border: 1px solid black;
+}
+.card-header {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: none;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.cardscontainer:hover .card-header {
+ 
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-header .fa-heart,
+.card-header .dropdown {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.card-header .dropdown-menu {
+  top: 15px;
+  right: 0;
+  left: auto;
+  min-width: 100px;
+}
+.card{
+  border: none;
+}
+.card-body {
+  background-color: rgb(204, 226, 233);
+  padding: 0%;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 340px;
+  width: 438px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
