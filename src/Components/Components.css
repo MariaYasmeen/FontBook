@@ -15,34 +15,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  padding: 20px;
 }
 
 .input-slider-row {
   display: flex;
+  flex-direction: row;
   align-items: center;
   margin-bottom: 20px;
 }
 
 .text-input {
-  padding: 10px;
-  font-size: 16px;
   margin-right: 20px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   flex: 1;
 }
 
+.font-size-controls {
+  display: flex;
+  align-items: center;
+}
+
 .font-slider {
-  width: 200px;
+  margin-right: 20px;
+  width: 150px;
+}
+
+.font-dropdown {
+  padding: 5px;
 }
 
 .text-display-box {
-  padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
+  padding: 20px;
   width: 100%;
+  max-width: 600px;
   text-align: center;
-  min-height: 100px;
-  box-sizing: border-box;
 }
