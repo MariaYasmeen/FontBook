@@ -63,7 +63,9 @@ export const Navbar = () => {
           </div> 
       </div>
     </div>
+  <hr />
   </nav>
+  <hr/>
       
     </>
   );

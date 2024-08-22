@@ -54,8 +54,6 @@ const FontDetails = () => {
             </div>
         <h6>~ Quid-e-Azam</h6>
 
-
-
         {/* <p>This is a detailed view for the font: {fontDetails.family}</p>
         <p style={{ fontFamily: fontDetails.family }}>
           The quick brown fox jumps over the lazy dog.
@@ -67,7 +65,6 @@ const FontDetails = () => {
           <p><strong>Author:</strong> {fontDetails.author || 'Unknown'}</p>
           <p><strong>License:</strong> {fontDetails.license || 'Unknown'}</p>
         </div> */}
-
       </div>
 
 
@@ -116,6 +113,7 @@ const FontDetails = () => {
 <TextEditor  fontFamily={fontDetails.family}/>
     <GlyphsPage fontFamily={fontDetails.family} /> 
    <h2 className='text-center'>Fonts that you may like</h2>
+   
     </main>
     </>
   );

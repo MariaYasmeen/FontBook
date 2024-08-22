@@ -118,3 +118,37 @@ i{
   width: 800px;
   border-radius: 45px;
 }
+
+/*Paginaiton Ui*/
+/*Pagination UI*/
+.soft-ui-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.soft-ui-button:hover {
+  box-shadow: 2px 2px 5px #d1d9e6, -2px -2px 5px #ffffff;
+}
+
+.soft-ui-button.active {
+  background-color: #e0e0e0;
+}
+
+.font-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

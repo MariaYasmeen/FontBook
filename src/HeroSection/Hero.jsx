@@ -1,8 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
+import FontCard from "../Components/FontCard";
 import styles from './Hero.module.css'; 
 import SearchBar from "../Search/SearchBar";
 
-const Hero = () =>{
+const backgroundColors = [
+    '#e9edc9', '#faedcd', '#ffc2d1', '#caf0f8', '#e7c6ff', '#ffd6ff', "#faf3dd" ,'#e6ccb2', '#ecf39e', "#b7e4c7",
+  ];
+
+const Hero = ({currentFonts}) =>{
+
+        const [filteredFonts, setFilteredFonts] = useState(currentFonts);
+      
+        const handleSearch = (searchTerm) => {
+            console.log('Search Term:', searchTerm);
+            const filtered = currentFonts.filter((font) =>
+              font.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            console.log('Filtered Fonts:', filtered);
+            setFilteredFonts(filtered);
+          };
+          
+          
+
     return (
         <>
          <div className={styles.herocontainer}>
@@ -17,22 +36,23 @@ const Hero = () =>{
         <span style={{display:"flex"}}>
   <section class={styles.animation}>
   <div class={styles.fifth}><div>font art</div></div>
-  <div class={styles.third}><div>Expression</div></div>
+  <div class={styles.third}><div>Typefaces</div></div>
   <div class={styles.first}><div>Typography</div></div>
+  <div class={styles.fith}><div>Typefaces</div></div>
   <div class={styles.fourth}><div>Letters</div></div>
-  <div class={styles.second}><div>Typefaces</div></div>
+  <div class={styles.fith}><div>Expression</div></div>
   </section>
             </span > with 
             
-            <span style={{color:"lightblue"}}>FontBook</span>. </h1>
+            FontB<span >  <span className={styles.loader}></span>k</span> <span style={{color:"lightblue"}}>.</span> </h1>
  <h2 > <span  className={styles.h2heading} >
     <span>
     <p class={styles.spoiler}>1000s of Free Fonts
   </p>
         </span>
         </span>
-        <span>to</span>
-        <span >Elevate</span>
+        <span>to </span>
+        <span className={styles.elevatecss}></span>
         <span>Your</span>
            
         <span className={styles.stylecss}>
@@ -41,7 +61,22 @@ const Hero = () =>{
         !</h2>
   
    
-  <SearchBar />
+        <div>
+      <SearchBar onSearch={handleSearch} />
+    
+      {filteredFonts.length > 0 ? (
+  filteredFonts.map((font, index) => (
+    <FontCard 
+      key={index}
+      backgroundColors={backgroundColors} 
+      heading={font.family}
+      googleFontLink={`https://fonts.google.com/specimen/${font.family.replace(/ /g, '+')}?preview.layout=grid`}
+    />
+  ))
+) : (
+  <p>No fonts found.</p>
+)}
+    </div>
     
   </div>
         </>
