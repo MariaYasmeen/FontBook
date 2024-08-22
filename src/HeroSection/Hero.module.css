@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+
+.herocontainer{
+  padding: 8em 2em 6em 3em;
+}
 p {.almendra-regular {
     font-family: "Almendra", serif;
     font-weight: 400;
@@ -11,6 +17,11 @@ p {.almendra-regular {
     font-family: "Albert Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 900;
+    font-style: normal;
+  }
+  .alex-brush-regular {
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
     font-style: normal;
   }
   
@@ -39,6 +50,8 @@ p {.almendra-regular {
     margin-bottom: 2.81rem;
     display:inline-block;
   }
+
+
   
   .animation div:first-child {
     animation: text-animation 8s infinite;
@@ -61,12 +74,12 @@ p {.almendra-regular {
   }
   .third div {
     background-color:#e9bec6;
-    font-family:cursive;
+    font-family:Georgia, 'Times New Roman', Times, serif
   }
   .fifth div {
     background-color:#dcbdf5;
     font-size: 60px;
-    font-family: "Almendra", serif;
+    font-family:monospace;
   }
   .h1, h1 {
     display: flex;
@@ -85,7 +98,17 @@ p {.almendra-regular {
     90% {margin-top: 0;}
     100% {margin-top: 0;}
   }
-
+  .h2heading{ 
+     font-size: 50px;
+     padding: 12px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    flex-wrap: wrap !important;
+  
+  }
+.h2heading span{ 
+    padding: 4px !important;
+    float:left
+}
   
   .hicss, .hicss:before, .hicss:after {
     box-sizing: border-box;
@@ -125,3 +148,26 @@ p {.almendra-regular {
     0% {background-position: 0 0}
     0% {background-position: 100% -100%}
     }
+
+    
+.stylecss{
+    padding:10px !important;
+    font-size: 43px;
+    text-decoration:overline;
+    font-family: "Alex Brush", cursive;}
+  .spoiler {
+    color: black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-position: left;
+    background-size: 100% 100%;
+    padding: 4px;
+    background-image: linear-gradient(#cedef3, #b1ccee, #c5eec4);
+    display: inline;
+    font-size: 28px;
+    background-repeat: no-repeat;
+    transition: all 450ms ease-in-out;
+  }
+  .spoiler:hover {
+    color: #000;
+    background-size: 0% 100%;
+  }

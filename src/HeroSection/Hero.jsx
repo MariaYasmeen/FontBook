@@ -1,10 +1,11 @@
 import React from "react";
 import styles from './Hero.module.css'; 
+import SearchBar from "../Search/SearchBar";
 
 const Hero = () =>{
     return (
         <>
-         <div class="p-5  ">
+         <div className={styles.herocontainer}>
     <h1 class={styles.textbodyemphasis}> 
         <span className={styles.flipcss}> Flip </span>    
         <span> into </span>
@@ -21,12 +22,27 @@ const Hero = () =>{
   <div class={styles.fourth}><div>Letters</div></div>
   <div class={styles.second}><div>Typefaces</div></div>
   </section>
-            </span> with FontBook. </h1>
- <h2 > <span  className={styles.h2heading} >1000s of Free Fonts </span>to Elevate Your Style!</h2>
+            </span > with 
+            
+            <span style={{color:"lightblue"}}>FontBook</span>. </h1>
+ <h2 > <span  className={styles.h2heading} >
+    <span>
+    <p class={styles.spoiler}>1000s of Free Fonts
+  </p>
+        </span>
+        </span>
+        <span>to</span>
+        <span >Elevate</span>
+        <span>Your</span>
+           
+        <span className={styles.stylecss}>
+         Style
+        </span>
+        !</h2>
   
-   <div class="d-inline-flex gap-2 mb-5">
-  {/* searchabr goes here */}
-     </div>
+   
+  <SearchBar />
+    
   </div>
         </>
     )

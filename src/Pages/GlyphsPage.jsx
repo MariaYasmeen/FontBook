@@ -18,7 +18,7 @@ const GlyphsPage = ({fontFamily}) => {
 
   return (
     <div className="glyph-container">
-      <h1 className="glyphheading">{fontName} Glyphs</h1>
+      <h1 className="glyphheading text-center">{fontName} Glyphs</h1>
       <div className="glyph-box-container">
         <div
           className="glyphbox"

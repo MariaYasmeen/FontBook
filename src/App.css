@@ -105,3 +105,16 @@ i{
   scrollbar-width:thin; /* Makes the scrollbar thin */
   scrollbar-color: white black; /* Sets the thumb color and track color */
 }
+
+/*SearchBar*/
+.searchBar{
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.searchBar input{
+  padding: 20px;
+  width: 800px;
+  border-radius: 45px;
+}
