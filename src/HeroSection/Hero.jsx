@@ -5,7 +5,7 @@ const backgroundColors = [
     '#e9edc9', '#faedcd', '#ffc2d1', '#caf0f8', '#e7c6ff', '#ffd6ff', "#faf3dd" ,'#e6ccb2', '#ecf39e', "#b7e4c7",
   ];
 
-const Hero = ({ searchTerm, setSearchTerm }) =>{
+const Hero = () =>{
 
   
     return (
@@ -47,17 +47,7 @@ const Hero = ({ searchTerm, setSearchTerm }) =>{
         !</h2>
   
    
-        <div>
-        <div className=" searchBar">
-        <input
-          type="text"
-          placeholder="Search fonts..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-bar"
-        />
-         </div>
-    </div>
+       
     
   </div>
         </>

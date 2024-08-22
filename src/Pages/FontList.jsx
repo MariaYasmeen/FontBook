@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { getFonts } from '../Functions/getGFont';
 import './Pages.css';
+import FontCategory from '../Components/FontCategory';
 import FontCard from '../Components/FontCard';
 import { Navbar } from '../Navbar/Navbar';
 import Hero from '../HeroSection/Hero';
+import SearchBar from '../Components/SearchBar';
 
 const FontList = () => {
   const [fonts, setFonts] = useState([]);
@@ -60,8 +62,11 @@ const FontList = () => {
   return (
     <>
       <Navbar />
-      <Hero searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
+      <Hero />
+      <div className="searchfiltercss">
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}  />
+      <FontCategory fonts={fonts} />
+      </div>
       <div className="font-list">
         {visibleFonts.length > 0 ? (
           visibleFonts.map((font, index) => (
