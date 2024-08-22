@@ -16,7 +16,7 @@ const copyToClipboard = (text) => {
 
 const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
 
-  const fontDetailsUrl = `http://localhost:3000/fonts/${heading.replace(/ /g, '-')}`;
+  const fontDetailsUrl = `http://localhost:3000/fonts/${heading.replace(/ /g, '+')}`;
   // Function to get a random background color
   const getRandomColor = () => {
     const randomIndex = Math.floor(Math.random() * backgroundColors.length);
@@ -27,7 +27,7 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
     <div className="cardcontainer">
       <div className="card cardscontainer" style={{ backgroundColor: getRandomColor() }}>
         <div className="card-header">
-        <i className="fa-regular fa-heart fa-font"></i>
+        <i className="fa-regular fa-heart iconcss" style={{color:"black"}}></i>
           <div className="dropdown">
             <a className="btn" role="button" data-bs-toggle="dropdown">
               <i className="fas fa-ellipsis-v"></i>
@@ -54,6 +54,7 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
                   Go to Google Font
                 </a>
               </li>
+              <li>Add to Favrouties</li>
               <li>
                 <button 
                   className="dropdown-item"

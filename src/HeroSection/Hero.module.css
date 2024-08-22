@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+p {.almendra-regular {
+    font-family: "Almendra", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+.albert-sans {
+    font-family: "Albert Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+    text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
+  }
+  .textbodyemphasis{
+    font-size: 50px;
+    display: flex !important;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    flex-wrap: wrap !important;
+  }
+  .textbodyemphasis span{
+    padding: 4px;
+    float:left
+  }
+.flipcss{
+    font-family: "Albert Sans", sans-serif;}
+  .animation {
+    height:70px;
+    overflow:hidden;
+  }
+  
+  .animation > div > div {
+    padding: 0.25rem 0.75rem;
+    height:3rem;
+    margin-bottom: 2.81rem;
+    display:inline-block;
+  }
+  
+  .animation div:first-child {
+    animation: text-animation 8s infinite;
+  }
+  
+  .first div {
+    background-color:#adc9d3;
+    font-family:fantasy;
+    letter-spacing: 1.3px;
+  }
+  .second div {
+    background-color:#d4be91;
+    letter-spacing: 0px;
+    font-family:'Courier New', Courier, monospace;
+  }
+  .fourth div{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 3px;
+    background-color:#f7d1e4;
+  }
+  .third div {
+    background-color:#e9bec6;
+    font-family:cursive;
+  }
+  .fifth div {
+    background-color:#dcbdf5;
+    font-size: 60px;
+    font-family: "Almendra", serif;
+  }
+  .h1, h1 {
+    display: flex;
+    font-size: calc(1.375rem + 1.5vw);
+}
+  
+  @keyframes text-animation {
+    0% {margin-top: 0;}
+    10% {margin-top: 0;}
+    20% {margin-top: -5.62rem;}
+    30% {margin-top: -5.62rem;}
+    40% {margin-top: -11.24rem;}
+    60% {margin-top: -11.24rem;}
+    70% {margin-top: -5.62rem;}
+    80% {margin-top: -5.62rem;}
+    90% {margin-top: 0;}
+    100% {margin-top: 0;}
+  }
+
+  
+  .hicss, .hicss:before, .hicss:after {
+    box-sizing: border-box;
+    position: relative;
+    }
+  
+
+  .hicss {
+    display: inline-block;
+    color: rgb(247, 143, 9);
+    font-family: 'Righteous', serif;
+    font-size: 1.2em; 
+    text-shadow: .04em .1em 0 rgb(2, 4, 17);
+    }
+    .hicss:after {
+      content: attr(data-shadow);
+      position: absolute;
+      top: .06em; left: .06em;
+      z-index: -1;
+      text-shadow: none;
+      background-image:
+        linear-gradient(
+          85deg,
+          transparent 45%,
+          rgb(107, 92, 25) 55%,
+          rgb(75, 67, 35) 75%,
+          transparent 0
+          );
+      background-size: .08em .08em;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    
+      animation: shad-anim 15s linear infinite;
+      }
+  
+  @keyframes shad-anim {
+    0% {background-position: 0 0}
+    0% {background-position: 100% -100%}
+    }

@@ -1,115 +1,18 @@
+.navbarcss li a{
+  color: black !important;
+  text-transform: uppercase;
+  justify-content: center;
+  font-size: 16px !important;
+}
+.navbarcss{
+  margin-left: 30px;
+}
+.navbarheight{
+  height: 5em;
+}
 
-  /* Navbar.css */
-  .cart-badge {
-    position: absolute;
-    top: -9px;
-    right: -3px;
-    background-color: darkred;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 5px;
-    font-size: 10px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 16px;
-    height: 16px;
-  }
-  
-  nav{
-    margin-bottom: 10px;
-  }
-  .nav-links li{
-    list-style: none;
-  }
 
-  .nav-links li a{
-    color: #000;
-    text-decoration: none;
-    font-size: 15px;
-    text-transform: uppercase;
-    padding: 5px 17px;
-    letter-spacing: 2px;
-    border-bottom: 2px solid white;
-    transition: all 0.3s ease;
-  }
-  
-  .ulcss li a{
-    color: #000;
-    font-size: 15px;
-    border-radius: none;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    border-bottom: 2px solid white;
-    transition: all 0.3s ease;
-  }
-  .nav-links li a:hover{
-    border-bottom: 2px solid black;
-    color: #000;
-  }
-
-  .ulcss li a:hover{
-    border-bottom: 2px solid black;
-    color: #000;
-  }
-  
-  .nav-links .drop-menu{
-    position: absolute;
-    background-color: white;
-    width: 180px;
-    line-height: 45px;
-    top: 15px;
-    color: black;
-    opacity: 0;
-    visibility: hidden;
-    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-  }
-
-  .fa-iconcss i{
-    font-size: 21px;
-    padding: 7px;
-    color: black;
-    }
-
-    .dropdown-menu{
-      border: 0px !important;
-      border-radius: 0px !important;
-      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-    }
-    .dropdown-menu img{
-      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-    }
-
-.navbar {
-    position: relative; 
-    z-index: 1000; /* High z-index value to ensure it appears on top */
-    color: black;
-    height: 34px;
-    width: 100%;
-    background-color: white; /* Default background color */
-  }
-  
-  .navbar-toggler {
-    z-index: 100; /* Change this color for the icon */
-  }
-  .top-strip{
-    height:"70px" !important;
-  }
-  .top-strip div{
-    font-size: 14px ;
-    letter-spacing: 1px;
-    margin: 8px;
-  }
-  .navbar-collapse {
-    z-index: 1000; /* Ensure collapsed menu is on top */
-    position: relative; 
-    color: white;
-    background-color: white; 
-  }
-  .position-relative {
-    position: relative;
-  }
-
-  
- 
+.fa-iconcss{
+  display: flex;
+  justify-content: flex-end;
+}

@@ -66,3 +66,42 @@
   text-align: center;
 }
 
+i{
+  margin: 6px;
+  color: black;
+  font-size: 1.2em;
+}
+
+/* Apply a custom style to selected text */
+::selection {
+  background-color: black;
+  color: white;
+}
+
+/* For Mozilla Firefox */
+::-moz-selection {
+  background-color: black;
+  color: white;
+}
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  border-radius: 20px ;
+  width: 9px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar for horizontal scrolling */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white; /* Color of the scrollbar thumb */
+  border-radius: 10%; /* Roundness of the scrollbar thumb */
+} 
+
+::-webkit-scrollbar-track {
+  background-color: black; /* Background color of the scrollbar track */
+  border-radius: 10%; /* Roundness of the scrollbar track */
+}
+
+/* For Mozilla Firefox */
+* {
+  scrollbar-width:thin; /* Makes the scrollbar thin */
+  scrollbar-color: white black; /* Sets the thumb color and track color */
+}

@@ -3,6 +3,7 @@ import { getFonts } from '../Functions/getGFont';
 import './Pages.css';
 import FontCard from '../Components/FontCard';
 import { Navbar } from '../Navbar/Navbar';
+import Hero from '../HeroSection/Hero';
 
 const FontList = () => {
   const [fonts, setFonts] = useState([]);
@@ -58,6 +59,7 @@ const FontList = () => {
   return (
     <>
     <Navbar />
+   <Hero/>
     <div className="font-list">
       {currentFonts.length > 0 ? (
         currentFonts.map((font, index) => (
@@ -72,7 +74,7 @@ const FontList = () => {
         <p>Loading fonts...</p>
       )}
       
-      <div className="pagination">
+      {/* <div className="pagination">
         <button 
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
@@ -96,7 +98,7 @@ const FontList = () => {
         >
           Next
         </button>
-      </div>
+      </div> */}
     </div>
     </>
   );

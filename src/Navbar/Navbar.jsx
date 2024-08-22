@@ -11,48 +11,39 @@ export const Navbar = () => {
 
   return (
 
-    <>
-      <div
-        className="d-flex justify-content-center align-items-center top-strip"
-        style={{ backgroundColor: "black" }}
-      >
-        <div className="mx-5">
-          <Link
-            to=""
-            className="text-decoration-none"
-            style={{ color: "white" }}
-          > FREE SHIPPING OVER PKR 5,000
-          </Link>
-        </div>
-        <div className="mx-5">
-          <Link
-            to=""
-            className="text-decoration-none"
-            style={{ color: "white" }}
-          >FOR CUSTOMIZATIONS OR PERSONAL ASSISTANCE, WHATSAPP US AT | +9221111627422
-          </Link>
-        </div>
-      </div>
+  <>
 
-      <div className="fa-iconcss">
-        <div className="row align-items-center justify-content-between">
-        
-        <div className="col text-center">
-      <Link
-              to="/"
-              className="text-decoration-none text-center"
-              style={{ color: "black", fontSize: "40px", letterSpacing: "2px" }}
-            >
-              FontBook
-            </Link>
-            </div>
-    
-        
-            <div className="col text-center fa-iconcss">
+   
+      <nav class="navbar navbar-expand-lg navbarheight " aria-label="Eighth navbar example" >
+    <div class="container  ">
+      <a class="navbar-brand " href="#" style={{color:"black", fontSize:"2.4em"}}>FontBook</a>
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse  " id="navbarsExample07">
+        <ul class="navbar-nav text-center navbarcss ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Explore</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">font Categories</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">docs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">contact</a>
+          </li>
         
-          </div>
-
+         
+        </ul>
+      
         <div className="col text-center fa-iconcss">
      <Link to="#" className="text-decoration-none">
               <i className="fa-solid fa-clipboard-question"></i>
@@ -69,10 +60,10 @@ export const Navbar = () => {
             <span className="cart-badge">1</span>
          </Link>
        
-          </div>
-        </div>
+          </div> 
       </div>
-
+    </div>
+  </nav>
       
     </>
   );

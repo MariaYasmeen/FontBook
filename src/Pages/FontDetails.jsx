@@ -5,6 +5,7 @@ import { getFonts } from '../Functions/getGFont'; // Import the getFonts functio
 import './Pages.css';
 import TextResizer from '../Components/TextResizer';
 import TextEditor from '../Components/TextEditor';
+import { Navbar } from '../Navbar/Navbar';
 
 const FontDetails = () => {
   const { fontFamily } = useParams();
@@ -23,7 +24,7 @@ const FontDetails = () => {
     const fetchFontDetails = async () => {
       try {
         const fontsData = await getFonts();
-        const font = fontsData.find(f => f.family.replace(/ /g, '-') === fontFamily);
+        const font = fontsData.find(f => f.family.replace(/ /g, '+') === fontFamily);
         setFontDetails(font);
         loadFont(fontFamily); // Load the font when the component mounts
       } catch (error) {
@@ -39,6 +40,8 @@ const FontDetails = () => {
   }
 
   return (
+    <>
+    <Navbar />
     <main>
       <div className="px-4 py-5 my-5 text-center" style={{ fontFamily: fontDetails.family }}>
         <h5 className='glyphheading'>Font - {fontDetails.family}</h5>
@@ -114,6 +117,7 @@ const FontDetails = () => {
     <GlyphsPage fontFamily={fontDetails.family} /> 
    <h2 className='text-center'>Fonts that you may like</h2>
     </main>
+    </>
   );
 };
 
