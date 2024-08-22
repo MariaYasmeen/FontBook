@@ -1,27 +1,13 @@
 import React, {useState} from "react";
-import FontCard from "../Components/FontCard";
 import styles from './Hero.module.css'; 
-import SearchBar from "../Search/SearchBar";
 
 const backgroundColors = [
     '#e9edc9', '#faedcd', '#ffc2d1', '#caf0f8', '#e7c6ff', '#ffd6ff', "#faf3dd" ,'#e6ccb2', '#ecf39e', "#b7e4c7",
   ];
 
-const Hero = ({currentFonts}) =>{
+const Hero = ({ searchTerm, setSearchTerm }) =>{
 
-        const [filteredFonts, setFilteredFonts] = useState(currentFonts);
-      
-        const handleSearch = (searchTerm) => {
-            console.log('Search Term:', searchTerm);
-            const filtered = currentFonts.filter((font) =>
-              font.name.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-            console.log('Filtered Fonts:', filtered);
-            setFilteredFonts(filtered);
-          };
-          
-          
-
+  
     return (
         <>
          <div className={styles.herocontainer}>
@@ -62,20 +48,15 @@ const Hero = ({currentFonts}) =>{
   
    
         <div>
-      <SearchBar onSearch={handleSearch} />
-    
-      {filteredFonts.length > 0 ? (
-  filteredFonts.map((font, index) => (
-    <FontCard 
-      key={index}
-      backgroundColors={backgroundColors} 
-      heading={font.family}
-      googleFontLink={`https://fonts.google.com/specimen/${font.family.replace(/ /g, '+')}?preview.layout=grid`}
-    />
-  ))
-) : (
-  <p>No fonts found.</p>
-)}
+        <div className=" searchBar">
+        <input
+          type="text"
+          placeholder="Search fonts..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-bar"
+        />
+         </div>
     </div>
     
   </div>

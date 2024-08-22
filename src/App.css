@@ -113,42 +113,49 @@ i{
   justify-content: center;
   align-items: center;
 }
-.searchBar input{
-  padding: 20px;
-  width: 800px;
-  border-radius: 45px;
-}
 
 /*Paginaiton Ui*/
-/*Pagination UI*/
-.soft-ui-button {
-  background-color: #f0f0f0;
-  border: none;
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  margin: 3em 2em 5em 2em;
+  width: 100%;
+  max-width: 1000px !important;
+  padding: 20px;
+  border-radius: 35px;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
+  font-size: 18px;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #888;
+}
+
+.load-more-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.load-more-button {
   padding: 10px 20px;
   border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
   box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
-  margin: 5px;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.soft-ui-button:hover {
-  box-shadow: 2px 2px 5px #d1d9e6, -2px -2px 5px #ffffff;
-}
-
-.soft-ui-button.active {
-  background-color: #e0e0e0;
-}
-
-.font-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.load-more-button:hover {
+  box-shadow: 5px 5px 15px #a0a6c0, -5px -5px 15px #ffffff;
 }

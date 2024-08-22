@@ -7,8 +7,10 @@ import Hero from '../HeroSection/Hero';
 
 const FontList = () => {
   const [fonts, setFonts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [fontsPerPage] = useState(100); // Number of fonts per page
+  const [visibleFonts, setVisibleFonts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [page, setPage] = useState(1);
+  const fontsPerPage = 100;
 
   useEffect(() => {
     const fetchFonts = async () => {
@@ -18,9 +20,10 @@ const FontList = () => {
 
         if (Array.isArray(fontsData)) {
           setFonts(fontsData);
+          setVisibleFonts(fontsData.slice(0, fontsPerPage)); // Initially show only the first 100 fonts
 
-          // Preload fonts by appending links to the document head
-          fontsData.forEach(font => {
+          // Preload fonts for the first page
+          fontsData.slice(0, fontsPerPage).forEach(font => {
             const link = document.createElement('link');
             link.href = `https://fonts.googleapis.com/css2?family=${font.family.replace(/ /g, '+')}`;
             link.rel = 'stylesheet';
@@ -39,70 +42,49 @@ const FontList = () => {
     fetchFonts();
   }, []);
 
-  // Calculate the fonts to display for the current page
-  const indexOfLastFont = currentPage * fontsPerPage;
-  const indexOfFirstFont = indexOfLastFont - fontsPerPage;
-  const currentFonts = fonts.slice(indexOfFirstFont, indexOfLastFont);
+  useEffect(() => {
+    const filtered = fonts.filter(font =>
+      font.family.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setVisibleFonts(filtered.slice(0, page * fontsPerPage));
+  }, [searchTerm, page, fonts]);
+
+  const loadMoreFonts = () => {
+    setPage(prevPage => prevPage + 1);
+  };
 
   const backgroundColors = [
     '#e9edc9', '#faedcd', '#ffc2d1', '#caf0f8', '#e7c6ff', '#ffd6ff', "#faf3dd" ,'#e6ccb2', '#ecf39e', "#b7e4c7",
   ];
 
-  // Handler for page change
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  // Total number of pages
-  const totalPages = Math.ceil(fonts.length / fontsPerPage);
-  
-
   return (
     <>
-    <Navbar />
-   <Hero  currentFonts={fonts} />
-    <div className="font-list">
-      {currentFonts.length > 0 ? (
-        currentFonts.map((font, index) => (
-          <FontCard 
-            key={index}
-            backgroundColors={backgroundColors} 
-            heading={font.family}
-            googleFontLink={`https://fonts.google.com/specimen/${font.family.replace(/ /g, '+')}?preview.layout=grid`}
-          />
-        ))
-      ) : (
-        <p>Loading fonts...</p>
-      )}
-      
-      
-       {/* <div className="pagination">
-        <button 
-          className="soft-ui-button"
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-        
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button 
-            key={index + 1}
-            onClick={() => handlePageChange(index + 1)}
-           className={`soft-ui-button ${currentPage === index + 1 ? 'active' : ''}`}
-             >
-            {index + 1}
-          </button>
-        ))}
+      <Navbar />
+      <Hero searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-        <button 
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          Next
-        </button>
-      </div>  */}
-    </div>
+      <div className="font-list">
+        {visibleFonts.length > 0 ? (
+          visibleFonts.map((font, index) => (
+            <FontCard 
+              key={index}
+              backgroundColors={backgroundColors} 
+              heading={font.family}
+              googleFontLink={`https://fonts.google.com/specimen/${font.family.replace(/ /g, '+')}?preview.layout=grid`}
+            />
+          ))
+        ) : (
+          <p>Loading fonts...</p>
+        )}
+
+       
+      </div>
+      {visibleFonts.length < fonts.length && (
+          <div className="load-more-container">
+            <button className="load-more-button" onClick={loadMoreFonts}>
+              Explore More Fonts
+            </button>
+          </div>
+        )}
     </>
   );
 };
