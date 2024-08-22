@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext} from 'react';
+import { FavoritesContext } from '../Context/FavoritiesContext';
 import "./Components.css";
 
 const openInNewTab = (url) => {
@@ -23,11 +23,20 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
     return backgroundColors[randomIndex];
   };
 
+  const { addToFavorites } = useContext(FavoritesContext);
+
+  const handleAddToFavorites = () => {
+    addToFavorites({
+      family: heading,
+      link: googleFontLink,
+    });
+  };
+
   return (
     <div className="cardcontainer">
       <div className="card cardscontainer" style={{ backgroundColor: getRandomColor() }}>
         <div className="card-header">
-        <i className="fa-regular fa-heart iconcss" style={{color:"black"}}></i>
+      <button onClick={handleAddToFavorites}><i className="fa-regular fa-heart iconcss" style={{color:"black"}}></i></button>  
           <div className="dropdown">
             <a className="btn" role="button" data-bs-toggle="dropdown">
               <i className="fas fa-ellipsis-v"></i>
@@ -54,7 +63,7 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
                   Go to Google Font
                 </a>
               </li>
-              <li>Add to Favrouties</li>
+              <li><button  onClick={handleAddToFavorites}>Add to Favrouties</button></li>
               <li>
                 <button 
                   className="dropdown-item"

@@ -55,7 +55,7 @@ export const Navbar = () => {
             >
               <i className="fa-solid fa-magnifying-glass"></i>
             </Link>
-         <Link to="/mywishlist" className="text-decoration-none position-relative">
+         <Link to="/favorites" className="text-decoration-none position-relative">
             <i className="fa-regular fa-heart"></i>
             <span className="cart-badge">1</span>
          </Link>
