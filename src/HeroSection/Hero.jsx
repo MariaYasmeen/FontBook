@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styles from './Hero.module.css'; 
+import { Navbar } from "../Navbar/Navbar";
 
 const backgroundColors = [
     '#e9edc9', '#faedcd', '#ffc2d1', '#caf0f8', '#e7c6ff', '#ffd6ff', "#faf3dd" ,'#e6ccb2', '#ecf39e', "#b7e4c7",
@@ -10,6 +11,7 @@ const Hero = () =>{
   
     return (
         <>
+        <Navbar />
          <div className={styles.herocontainer}>
     <h1 class={styles.textbodyemphasis}> 
         <span className={styles.flipcss}> Flip </span>    
@@ -50,6 +52,10 @@ const Hero = () =>{
        
     
   </div>
+
+  
+
+
         </>
     )
 }

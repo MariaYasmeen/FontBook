@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
+import { BookmarkContext } from "../Context/BookmarkContext";
 import './Navbar.css'; // Import the CSS file for styling
 
 
 
 export const Navbar = () => {
  
-//  const cartItems = useSelector((state) => state.cart)
-// const wishlistItems = useSelector((state) => state.wishlist);
+  const { bookmarks } = useContext(BookmarkContext);
 
   return (
 
@@ -49,16 +49,19 @@ export const Navbar = () => {
               <i className="fa-solid fa-clipboard-question"></i>
             </Link>
             <Link
-              to="#"
+              to="/fontsearch"
            //   onClick={toggleSearchBar}
               className="text-decoration-none"
             >
               <i className="fa-solid fa-magnifying-glass"></i>
             </Link>
-         <Link to="/favorites" className="text-decoration-none position-relative">
-            <i className="fa-regular fa-heart"></i>
-            <span className="cart-badge">1</span>
-         </Link>
+            <Link to="/bookmarks" className="text-decoration-none position-relative">
+        <i className="fa-regular fa-bookmark"></i>
+        {bookmarks.length > 0 && (
+          <span className="bookmark-badge ">{bookmarks.length}</span>
+        )}
+      </Link>
+
        
           </div> 
       </div>

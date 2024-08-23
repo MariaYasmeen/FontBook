@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import GlyphsPage from './GlyphsPage';
 import { getFonts } from '../Functions/getGFont';
 import './Pages.css';
@@ -7,11 +8,12 @@ import TextResizer from '../Components/TextResizer';
 import TextEditor from '../Components/TextEditor';
 import { Navbar } from '../Navbar/Navbar';
 import FontsYouMayLike from '../Components/FontsYouMayLike';
+import { FontContext } from '../Context/FontContext';
 
 const FontDetails = () => {
   const { fontFamily } = useParams();
   const [fontDetails, setFontDetails] = useState(null);
-  const [allFonts, setAllFonts] = useState([]);
+  const { fonts } = useContext(FontContext); // Get fonts from FontContext
 
   const typetestertxt = "Character, courage, industry, and perseverance are the four pillars on which the whole edifice of human life can be built and failure is a word unknown to me.";
 
@@ -29,7 +31,6 @@ const FontDetails = () => {
         const fontsData = await getFonts();
         const font = fontsData.find(f => f.family.replace(/ /g, '+') === fontFamily);
         setFontDetails(font);
-        setAllFonts(fontsData); // Store all fonts data to pass to FontsYouMayLike
         loadFont(fontFamily); // Load the font when the component mounts
       } catch (error) {
         console.error('Error fetching font details:', error);
@@ -45,6 +46,10 @@ const FontDetails = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{fontFamily} - Quick View | FontBook</title> {/* Set dynamic title */}
+        <meta name="description" content={`Flip into the WORLD of Typefaces  with FontBook. 1000s of Free Fonts to Your Style!`} /> {/* Add meta description */}
+      </Helmet>
       <Navbar />
       <main>
         <div className="px-4 py-5 my-5 text-center" style={{ fontFamily: fontDetails.family }}>
@@ -104,8 +109,8 @@ const FontDetails = () => {
         <GlyphsPage fontFamily={fontDetails.family} />
 
         {/* Fonts You May Like Section */}
-        <h2 className='text-center ' style={{padding:"50px", fontSize:"23px"}}>Fonts that you may like</h2>
-        <FontsYouMayLike allFonts={allFonts} currentFont={fontDetails.family} />
+        <h2 className='text-center ' style={{ padding: "50px", fontSize: "23px" }}>Fonts that you may like</h2>
+        <FontsYouMayLike currentFont={fontDetails.family} />
       </main>
     </>
   );

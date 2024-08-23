@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import FontCard from './FontCard';
-import { Navbar } from '../Navbar/Navbar';
-const FontCategory = ({ fonts }) => {
+import { FontContext } from '../Context/FontContext'; // Import FontContext
+
+const FontCategory = () => {
+  const { fonts } = useContext(FontContext); // Use the context to get fonts
   const [selectedCategory, setSelectedCategory] = useState('');
   const [filteredFonts, setFilteredFonts] = useState([]);
-  
+
   const categories = [
     'Serif', 'Sans-Serif', 'Display', 'Handwriting', 'Monospace'
   ];
@@ -29,7 +31,6 @@ const FontCategory = ({ fonts }) => {
   ];
 
   return (
-    <>
     <div className="font--container">
       <div className="category-selector">
         <select id="font-category" value={selectedCategory} onChange={handleCategoryChange}>
@@ -51,11 +52,10 @@ const FontCategory = ({ fonts }) => {
             />
           ))
         ) : (
-         ""
+          null
         )}
       </div>
     </div>
-    </>
   );
 };
 

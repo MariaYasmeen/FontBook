@@ -1,6 +1,6 @@
-import React, { useContext} from 'react';
-import { FavoritesContext } from '../Context/FavoritiesContext';
-import "./Components.css";
+import React, { useContext } from 'react';
+import { BookmarkContext } from '../Context/BookmarkContext';
+import './Components.css';
 
 const openInNewTab = (url) => {
   window.open(url, '_blank', 'noopener,noreferrer');
@@ -15,28 +15,43 @@ const copyToClipboard = (text) => {
 };
 
 const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
-
   const fontDetailsUrl = `http://localhost:3000/fonts/${heading.replace(/ /g, '+')}`;
-  // Function to get a random background color
+
   const getRandomColor = () => {
     const randomIndex = Math.floor(Math.random() * backgroundColors.length);
     return backgroundColors[randomIndex];
   };
+  const { bookmarks, addToBookmarks, removeFromBookmarks } = useContext(BookmarkContext);
 
-  const { addToFavorites } = useContext(FavoritesContext);
+  // Check if the font is already in the bookmarks
+  const isBookmarked = bookmarks.some(favFont => favFont.family === heading);
 
-  const handleAddToFavorites = () => {
-    addToFavorites({
-      family: heading,
-      link: googleFontLink,
-    });
+  const handleToggleBookmarks = () => {
+    if (isBookmarked) {
+      removeFromBookmarks(heading);
+      // Update local storage after removing a font
+      const updatedBookmarks = bookmarks.filter(favFont => favFont.family !== heading);
+      localStorage.setItem('bookmarkedItems', JSON.stringify(updatedBookmarks));
+    } else {
+      const newBookmark = {
+        family: heading,
+        link: googleFontLink,
+      };
+      addToBookmarks(newBookmark);
+      // Update local storage after adding a font
+      const updatedBookmarks = [...bookmarks, newBookmark];
+      localStorage.setItem('bookmarkedItems', JSON.stringify(updatedBookmarks));
+    }
   };
 
   return (
     <div className="cardcontainer">
       <div className="card cardscontainer" style={{ backgroundColor: getRandomColor() }}>
         <div className="card-header">
-      <button onClick={handleAddToFavorites}><i className="fa-regular fa-heart iconcss" style={{color:"black"}}></i></button>  
+          <button onClick={handleToggleBookmarks} className='bookmarkbtn bookmark-button'>
+            <i className={isBookmarked ? "fa-solid fa-bookmark iconcss" : "fa-regular fa-bookmark iconcss"} style={{color:"black"}}></i>
+            <span className="bookmark-label">Bookmark</span>
+          </button>
           <div className="dropdown">
             <a className="btn" role="button" data-bs-toggle="dropdown">
               <i className="fas fa-ellipsis-v"></i>
@@ -63,7 +78,11 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
                   Go to Google Font
                 </a>
               </li>
-              <li><button  onClick={handleAddToFavorites}>Add to Favrouties</button></li>
+              <li>
+                <button onClick={handleToggleBookmarks}>
+                  {isBookmarked ? 'Unbookmark this font' : 'Bookmark this font'}
+                </button>
+              </li>
               <li>
                 <button 
                   className="dropdown-item"
@@ -79,18 +98,17 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
           </div>
         </div>
         <a 
-  href={fontDetailsUrl} 
-  className="card-link" 
-  target="_blank" 
-  rel="noopener noreferrer"
->
-  <div className="font-card card-body">
-    <h5 className="card-title" style={{ fontFamily: heading }}>
-      {heading}
-    </h5>
-  </div>
-</a>
-
+          href={fontDetailsUrl} 
+          className="card-link" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <div className="font-card card-body">
+            <h5 className="card-title" style={{ fontFamily: heading }}>
+              {heading}
+            </h5>
+          </div>
+        </a>
       </div>
     </div>
   );
