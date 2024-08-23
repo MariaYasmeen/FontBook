@@ -22,15 +22,8 @@ const FontList = () => {
 
         if (Array.isArray(fontsData)) {
           setFonts(fontsData);
+          preloadFonts(fontsData.slice(0, fontsPerPage)); // Preload fonts for the first page
           setVisibleFonts(fontsData.slice(0, fontsPerPage)); // Initially show only the first 100 fonts
-
-          // Preload fonts for the first page
-          fontsData.slice(0, fontsPerPage).forEach(font => {
-            const link = document.createElement('link');
-            link.href = `https://fonts.googleapis.com/css2?family=${font.family.replace(/ /g, '+')}`;
-            link.rel = 'stylesheet';
-            document.head.appendChild(link);
-          });
         } else {
           console.error('Unexpected response structure:', fontsData);
           setFonts([]);
@@ -44,12 +37,25 @@ const FontList = () => {
     fetchFonts();
   }, []);
 
+  // Filter and update visible fonts based on the search term or page number
   useEffect(() => {
     const filtered = fonts.filter(font =>
       font.family.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setVisibleFonts(filtered.slice(0, page * fontsPerPage));
+    const newVisibleFonts = filtered.slice(0, page * fontsPerPage);
+    preloadFonts(newVisibleFonts); // Preload fonts for the current page
+    setVisibleFonts(newVisibleFonts);
   }, [searchTerm, page, fonts]);
+
+  // Preload fonts dynamically
+  const preloadFonts = (fontBatch) => {
+    fontBatch.forEach(font => {
+      const link = document.createElement('link');
+      link.href = `https://fonts.googleapis.com/css2?family=${font.family.replace(/ /g, '+')}:wght@400;700&display=swap`;
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+    });
+  };
 
   const loadMoreFonts = () => {
     setPage(prevPage => prevPage + 1);
@@ -64,8 +70,8 @@ const FontList = () => {
       <Navbar />
       <Hero />
       <div className="searchfiltercss">
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}  />
-      <FontCategory fonts={fonts} />
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <FontCategory fonts={fonts} />
       </div>
       <div className="font-list">
         {visibleFonts.length > 0 ? (
@@ -80,16 +86,14 @@ const FontList = () => {
         ) : (
           <p>Loading fonts...</p>
         )}
-
-       
       </div>
       {visibleFonts.length < fonts.length && (
-          <div className="load-more-container">
-            <button className="load-more-button" onClick={loadMoreFonts}>
-              Explore More Fonts
-            </button>
-          </div>
-        )}
+        <div className="load-more-container">
+          <button className="load-more-button" onClick={loadMoreFonts}>
+            Explore More Fonts
+          </button>
+        </div>
+      )}
     </>
   );
 };
