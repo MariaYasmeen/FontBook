@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useState, useMemo } from 'react';
 import { BookmarkContext } from '../Context/BookmarkContext';
 import './Components.css';
 
@@ -6,15 +6,16 @@ const openInNewTab = (url) => {
   window.open(url, '_blank', 'noopener,noreferrer');
 };
 
-const copyToClipboard = (text) => {
+const copyToClipboard = (text, callback) => {
   navigator.clipboard.writeText(text).then(() => {
-    alert('URL copied to clipboard');
+    callback(); // Call the callback function to change the button text
   }).catch(err => {
     console.error('Failed to copy: ', err);
   });
 };
 
 const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
+  const [copyText, setCopyText] = useState('Copy URL');
   const fontDetailsUrl = `http://localhost:3000/fonts/${heading.replace(/ /g, '+')}`;
 
   // Generate a random color once per card and memoize it
@@ -44,6 +45,16 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
       const updatedBookmarks = [...bookmarks, newBookmark];
       localStorage.setItem('bookmarkedItems', JSON.stringify(updatedBookmarks));
     }
+  };
+
+  const handleCopyUrlClick = (e) => {
+    e.stopPropagation();
+    copyToClipboard(fontDetailsUrl, () => {
+      setCopyText('URL Copied');
+      setTimeout(() => {
+        setCopyText('Copy URL');
+      }, 1000); // Revert to "Copy URL" after 1 second
+    });
   };
 
   return (
@@ -88,12 +99,9 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
               <li>
                 <button 
                   className="dropdown-item font-link" 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    copyToClipboard(fontDetailsUrl);
-                  }}
+                  onClick={handleCopyUrlClick}
                 >
-                  Copy URL
+                  {copyText}
                 </button>
               </li>
             </ul>

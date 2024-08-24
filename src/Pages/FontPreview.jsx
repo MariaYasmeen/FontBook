@@ -24,7 +24,7 @@ const FontPreview = () => {
         <div className="input-container">
           <input
             type="text"
-            placeholder="There are two powers in the world; one is sword & other is pen."
+            placeholder="Expect the best, prepare for the worst."
             value={searchTerm}
             onChange={handleInputChange}
             className="font-input"
@@ -33,7 +33,7 @@ const FontPreview = () => {
         <div className="font-cards-container">
           {displayedFonts.map((font, index) => (
             <div key={index} className="previewfont-cards" style={{ fontFamily: font.family }}>
-              <p className="font-sample">{searchTerm || "There are two powers in the world; one is sword & other is pen."}</p>
+              <p className="font-sample">{searchTerm || "Expect the best, prepare for the worst."}</p>
               <a
                 href={`http://localhost:3000/fonts/${font.family.replace(/ /g, '+')}`}
                 target="_blank"

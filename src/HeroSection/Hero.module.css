@@ -212,7 +212,8 @@ p {.almendra-regular {
     padding:10px !important;
     font-size: 43px;
     text-decoration:overline;
-    font-family: "Alex Brush", cursive;}
+    font-family: "Alex Brush", cursive;
+  }
   .spoiler {
     color: black;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
