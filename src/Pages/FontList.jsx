@@ -5,7 +5,6 @@ import FontCard from '../Components/FontCard';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../HeroSection/Hero';
 import SearchBar from '../Components/SearchBar';
-import Loader from '../Components/Loader';
 
 const FontList = () => {
   const { fonts, searchTerm, setSearchTerm, page, loadMoreFonts } = useContext(FontContext);

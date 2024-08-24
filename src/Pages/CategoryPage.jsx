@@ -8,7 +8,7 @@ import Hero from '../HeroSection/Hero';
 
 const CategoryPage = () => {
   const { category } = useParams(); 
-  const { fonts, searchTerm, setSearchTerm, page, loadMoreFonts } = useContext(FontContext);
+  const { fonts, searchTerm, page, loadMoreFonts } = useContext(FontContext);
 
   const fontsPerPage = 100;
 

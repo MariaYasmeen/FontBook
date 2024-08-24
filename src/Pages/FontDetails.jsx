@@ -8,13 +8,9 @@ import TextResizer from '../Components/TextResizer';
 import TextEditor from '../Components/TextEditor';
 import { Navbar } from '../Navbar/Navbar';
 import FontsYouMayLike from '../Components/FontsYouMayLike';
-import { FontContext } from '../Context/FontContext';
-import Loader from '../Components/Loader';
-
 const FontDetails = () => {
   const { fontFamily } = useParams();
   const [fontDetails, setFontDetails] = useState(null);
-  const { fonts } = useContext(FontContext); // Get fonts from FontContext
 
   const typetestertxt = "Think 100 times before you take a decision, But once that decision is taken, stand by it as one man.";
 

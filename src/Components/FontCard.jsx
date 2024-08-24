@@ -18,11 +18,10 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
   const [copyText, setCopyText] = useState('Copy URL');
   const fontDetailsUrl = `http://fontboook.web.app/fonts/${heading.replace(/ /g, '-')}`;
 
-  // Generate a random color once per card and memoize it
   const cardBackgroundColor = useMemo(() => {
     const randomIndex = Math.floor(Math.random() * backgroundColors.length);
     return backgroundColors[randomIndex];
-  }, [heading]); // Dependency array ensures the color is set once per card
+  }, [heading, backgroundColors]); // Include backgroundColors in the dependency array
 
   const { bookmarks, addToBookmarks, removeFromBookmarks } = useContext(BookmarkContext);
 
@@ -66,7 +65,7 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
             <span className="bookmark-label">{isBookmarked ? "Bookmarked" : "Bookmark"}</span>
           </button>
           <div className="dropdown">
-            <a className="btn" role="button" data-bs-toggle="dropdown">
+            <a  href="" className="btn" role="button" data-bs-toggle="dropdown">
               <i className="fas fa-ellipsis-v"></i>
             </a>
             <ul className="dropdown-menu dropdowntxt">
