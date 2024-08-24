@@ -151,20 +151,14 @@
 }
 /* Ensure dropdown menu is hidden by default */
 .dropdown-menu {
-  display: none; /* Hide dropdown menu */
   background: rgba(255, 255, 255, 0.9); /* Soft UI effect with slight transparency */
   border-radius: 12px; /* Rounded corners for Soft UI effect */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   padding: 10px;
+  transform: translateY(0); 
+  opacity: 1; /* Make it fully opaque */
   margin-top: 5px; /* Space between button and menu */
   transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
-}
-
-/* Show dropdown menu on hover */
-.dropdown:hover .dropdown-menu {
-  display: block; /* Show menu on hover */
-  opacity: 1; /* Make it fully opaque */
-  transform: translateY(0); /* Ensure it is in the right position */
 }
 
 /* Dropdown item styling */
@@ -200,5 +194,5 @@
 
 /* Icon styling */
 .fas {
-  font-size: 1.5em; /* Larger icon size */
+  font-size: 1.2em; /* Larger icon size */
 }

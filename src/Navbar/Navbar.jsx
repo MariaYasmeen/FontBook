@@ -42,6 +42,12 @@ export const Navbar = () => {
 
             </ul>
           </li>
+
+          <li class="nav-item">
+          <Link to="/fontpreview" class="nav-link active">font preview</Link>
+          </li>
+
+
           <li class="nav-item">
           <Link to="" class="nav-link active">DOCS</Link>
           </li>

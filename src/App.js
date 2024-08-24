@@ -11,6 +11,8 @@ import { FontProvider } from './Context/FontContext';
 import { BookmarkProvider } from './Context/BookmarkContext';
 import BookmarkPage from './Pages/BookmarkPage';
 import CategoryPage from './Pages/CategoryPage';
+import FontPreview from './Pages/FontPreview';
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path="/fonts/:fontFamily" element={<FontDetails />} />
           <Route path="/category/:category" element={<CategoryPage/>} />
           <Route path="/bookmarks" element={<BookmarkPage />} />
+          <Route path="/fontpreview" element={<FontPreview />} />
          
         </Routes>
       </BrowserRouter>

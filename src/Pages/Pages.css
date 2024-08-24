@@ -153,33 +153,6 @@ font-weight: bold;
   
 }
 
-
-/*Pagination CSS*/
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination button {
-  margin: 0 5px;
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  background-color: #f8f8f8;
-  cursor: pointer;
-}
-
-.pagination button.active {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
-}
-
-.pagination button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
 .category-page-container {
   padding: 20px;
   text-align: center;
@@ -191,3 +164,72 @@ font-weight: bold;
   justify-content: center;
 }
 
+.font-display-page {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.font-input {
+  width: 80%;
+  padding: 17px;
+  font-size: 1em;
+  border-radius: 35px;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.font-cards-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.previewfont-cards {
+  width: 100%;
+  max-width: 1300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.font-sample {
+  font-size: 2.5em;
+  margin-bottom: 1px;
+}
+
+.font-link {
+  font-size: 0.8em;
+  color: #333;
+  text-decoration: none;
+}
+
+.font-link:hover {
+  text-decoration: underline;
+}
+
+.load-more-container {
+  margin-top: 20px;
+}
+
+.load-more-button {
+  padding: 14px 30px;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  background-color: #d3d0d0;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.load-more-button:hover {
+  background-color: #bba2a2;
+}
