@@ -52,7 +52,7 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
         <div className="card-header">
           <button onClick={handleToggleBookmarks} className='bookmarkbtn bookmark-button'>
             <i className={isBookmarked ? "fa-solid fa-bookmark iconcss" : "fa-regular fa-bookmark iconcss"} style={{color:"black"}}></i>
-            <span className="bookmark-label">Bookmark</span>
+            <span className="bookmark-label">{isBookmarked ? "Bookmarked" : "Bookmark"}</span>
           </button>
           <div className="dropdown">
             <a className="btn" role="button" data-bs-toggle="dropdown">
