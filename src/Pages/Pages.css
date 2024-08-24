@@ -10,11 +10,57 @@
     justify-content: center;
     align-items: center;
   }
-
+  .responsive-font {
+    font-size: 15vw; /* Base font size relative to viewport width */
+  }
+  .desctxt{
+      font-size: 2.4em;
+  }
+  
+  /* Adjust font size for different screen sizes */
+  @media (max-width: 1200px) {
+    .responsive-font {
+      font-size: 16vw;
+    }
+    .desctxt{
+      font-size: 2.2em;
+  }
+  
+  }
+  
+  
+  
+  @media (max-width: 768px) {
+   
+    .desctxt{
+      font-size: 2em;
+  }
+  
+  }
+  
+  @media (max-width: 576px) {
+   
+    .desctxt{
+      font-size: 1.8em;
+  }
+  
+  }
+  
+  @media (max-width: 400px) {
+   
+    .desctxt{
+      font-size: 1.6em;
+  }
+  }
+  
   .font-category {
     font-size: 16px;
     color: #555;
   }
+
+  .fontlist-container
+{  width: 100%;
+  max-width: 200px;}
   /* FontList.css */
   .font-list {
     padding: 20px;
@@ -25,20 +71,7 @@
     align-items: center;
 }
 
-/*   
-  @media (max-width: 768px) {
-    .font-card {
-      flex: 1 1 calc(50% - 32px); 
-        max-width: calc(50% - 32px);
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .font-card {
-      flex: 1 1 100%; 
-           max-width: 100%;
-    }
-  } */
+*/
   
   
   .font-link {
@@ -53,7 +86,7 @@
   
   .font-sample {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 2.5em;
     color: #333;
   }
   
@@ -76,9 +109,13 @@
     font-size: 2.6em;
   }
 .glyphheading{
-  padding: 10px;
+  display: flex ;
+  justify-content: center !;
+  text-align: center;
+  padding: 0px 0px 0px 30px;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
 }
+
 .glypletters{
 border: 0.4px solid black;
 display: flex;
@@ -113,17 +150,27 @@ font-weight: bold;
   border: none;
   margin: 8px;
 }
-.glyphheading {
-  text-align: center;
-  margin-bottom: 20px;
-}
 
 .glyph-box-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+ 
+@media (max-width: 900px) {
+ 
+.glyph-box-container {
+  flex-direction: column-reverse ;
+}
+.glyphbox {
+  width: 100% !important;
+}
 
+.glypletters{
+  width: 2.2em;
+  height: 2.2em;
+  }
+  }
 .glyphbox {
   flex: 1.5 1;
   display: flex;
@@ -158,11 +205,7 @@ font-weight: bold;
   text-align: center;
 }
 
-.font-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 
 .font-display-page {
   padding: 20px;
@@ -170,19 +213,7 @@ font-weight: bold;
   flex-direction: column;
 }
 
-.input-container {
-  margin-bottom: 20px;
-  text-align: center;
-}
 
-.font-input {
-  width: 80%;
-  padding: 17px;
-  font-size: 1em;
-  border-radius: 35px;
-  border: 1px solid #ddd;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
 
 .font-cards-container {
   display: flex;
@@ -200,10 +231,6 @@ font-weight: bold;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.font-sample {
-  font-size: 2.5em;
-  margin-bottom: 1px;
-}
 
 .font-link {
   font-size: 0.8em;
@@ -233,3 +260,32 @@ font-weight: bold;
 .load-more-button:hover {
   background-color: #bba2a2;
 }
+.font-display-page {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.font-input {
+  width: 80%;
+  padding: 21px;
+  font-size: 1.1em;
+  border-radius: 35px;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.font-cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+

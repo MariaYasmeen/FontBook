@@ -54,11 +54,12 @@ const FontDetails = () => {
       <main>
         <div className="px-4 py-5 my-5 text-center" style={{ fontFamily: fontDetails.family }}>
           <h5 className='glyphheading'>fonts - {fontDetails.family}</h5>
-          <p className="display-5 text-body-emphasis" style={{ fontSize: '14em', textDecoration: 'none' }}>
-            {fontDetails.family}
-          </p>
+          <p className="responsive-font text-body-emphasis" style={{ textDecoration: 'none' }}>
+  {fontDetails.family}
+</p>
+
           <div className="col-lg-10 mx-auto">
-            <p className="lead mb-6" style={{ fontSize: '2.4em' }}>
+            <p className="lead mb-6 desctxt" >
               I have no doubt that with unity, faith, and discipline we will compare with any nation of the world. You must make up your minds now. We must sink individualism and petty jealousies and make up our minds to serve the people with honesty and faithfulness.
             </p>
           </div>

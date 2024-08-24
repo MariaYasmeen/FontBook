@@ -37,15 +37,14 @@ const GlyphsPage = ({fontFamily}) => {
           ))}
         </div>
         <div className="hovered-glyph-container">
-          {hoveredGlyph && (
-            <div
-              className="hovered-glyph"
-              style={{ fontFamily: fontFamily, fontSize: '7em' }} // Adjust size as needed
-            >
-              {hoveredGlyph}
-            </div>
-          )}
-        </div>
+  <div
+    className="hovered-glyph"
+    style={{ fontFamily: fontFamily, fontSize: '7em' }} // Adjust size as needed
+  >
+    {hoveredGlyph || "A"}
+  </div>
+</div>
+
       </div>
     </div>
   );

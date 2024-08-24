@@ -3,12 +3,12 @@ import React, { createContext, useState, useEffect } from 'react';
 export const BookmarkContext = createContext();
 
 export const BookmarkProvider = ({ children }) => {
-  const [bookmarks, setBookamrks] = useState([]);
+  const [bookmarks, setBookmarks] = useState([]);
 
-  // Load initial bookamrks from local storage
+  // Load initial bookmarks from local storage
   useEffect(() => {
     const storedBookmarks = JSON.parse(localStorage.getItem('bookmarkedItems')) || [];
-    setBookamrks(storedBookmarks);
+    setBookmarks(storedBookmarks);
   }, []);
 
   // Save bookmarks to local storage whenever it changes
@@ -17,23 +17,22 @@ export const BookmarkProvider = ({ children }) => {
   }, [bookmarks]);
 
   const addToBookmarks = (font) => {
-    setBookamrks((prevBookmarks) => {
-      // Check if the font is already in the bookmarks list
+    setBookmarks((prevBookmarks) => {
       if (prevBookmarks.some(fav => fav.family === font.family)) {
-        return prevBookmarks; // Do nothing if it's already added
+        return prevBookmarks; // If the font is already bookmarked, do nothing
       }
       return [...prevBookmarks, font];
     });
   };
 
   const removeFromBookmarks = (fontFamily) => {
-    setBookamrks((prevBookmarks) =>
+    setBookmarks((prevBookmarks) =>
       prevBookmarks.filter(fav => fav.family !== fontFamily)
     );
   };
 
   return (
-    <BookmarkContext.Provider value={{ bookmarks, addToBookmarks, removeFromBookmarks}}>
+    <BookmarkContext.Provider value={{ bookmarks, addToBookmarks, removeFromBookmarks }}>
       {children}
     </BookmarkContext.Provider>
   );

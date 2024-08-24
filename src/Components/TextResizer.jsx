@@ -19,15 +19,15 @@ const TextResizer = ({fontFamily}) => {
   return (
     <div className="text-resizer-container">
         <h3 className='glyphheading '>Styles</h3>
-      <div className="font-size-controls">
+      <div  className="responsive-search-container" >
       <input
           type="text"
           placeholder="Enter your text here..."
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="text-input"
+          className="responsive-search-input"
         />
-         <div className="font-size-controls">
+         <div className="search-container">
           <input
             type="range"
             min="8"

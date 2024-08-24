@@ -14,7 +14,7 @@ const BookmarkPage = () => {
   return (
     <>
       <Helmet>
-        <title>BookMark - FontBook</title> {/* Set dynamic title */}
+        <title> BookMark - FontBook</title> {/* Set dynamic title */}
         <meta name="description" content={`Flip into the WORLD of Typefaces with FontBook. 1000s of Free Fonts to Your Style!`} /> {/* Add meta description */}
       </Helmet>
       <Navbar />

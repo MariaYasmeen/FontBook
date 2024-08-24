@@ -31,15 +31,13 @@ const FontCategory = () => {
   ];
 
   return (
-    <div className="font--container">
-      <div className="category-selector">
-        <select id="font-category" value={selectedCategory} onChange={handleCategoryChange}>
+      <div >
+        <select className="category-selector" id="font-category" value={selectedCategory} onChange={handleCategoryChange}>
           <option value="">Category</option>
           {categories.map(category => (
             <option key={category} value={category}>{category}</option>
           ))}
         </select>
-      </div>
 
       <div className="font-list">
         {filteredFonts.length > 0 ? (

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FontContext } from '../Context/FontContext';
 import './Pages.css'; // Assuming you'll style this separately
+import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../Navbar/Navbar';
 
 const FontPreview = () => {
@@ -14,12 +15,16 @@ const FontPreview = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Font Preview | FontBook</title> {/* Set dynamic title */}
+        <meta name="description" content={`Let your text appear in 1000s of unique styles in FontBook`} /> {/* Add meta description */}
+      </Helmet>
       <Navbar />
       <div className="font-display-page">
         <div className="input-container">
           <input
             type="text"
-            placeholder="Type to preview your text in different font styles."
+            placeholder="There are two powers in the world; one is sword & other is pen."
             value={searchTerm}
             onChange={handleInputChange}
             className="font-input"

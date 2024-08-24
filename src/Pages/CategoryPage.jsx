@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FontContext } from '../Context/FontContext';
 import FontCard from '../Components/FontCard';
+import { Helmet } from 'react-helmet-async';
 import "./Pages.css";
 import Hero from '../HeroSection/Hero';
 
@@ -18,8 +19,12 @@ const CategoryPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{category} | Category - FontBook</title> {/* Set dynamic title */}
+        <meta name="description" content={`Let your text appear in 1000s of unique styles in FontBook`} /> {/* Add meta description */}
+      </Helmet>
     <Hero />
-    <div className="cat">
+    <div className="t">
       <h5 className='text-center' style={{padding:"40px"}}>Font Category ~{category} </h5>
       <div className="font-list">
         {filteredFonts.length > 0 ? (
