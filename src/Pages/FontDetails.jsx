@@ -9,6 +9,7 @@ import TextEditor from '../Components/TextEditor';
 import { Navbar } from '../Navbar/Navbar';
 import FontsYouMayLike from '../Components/FontsYouMayLike';
 import { FontContext } from '../Context/FontContext';
+import Loader from '../Components/Loader';
 
 const FontDetails = () => {
   const { fontFamily } = useParams();
@@ -41,7 +42,7 @@ const FontDetails = () => {
   }, [fontFamily]);
 
   if (!fontDetails) {
-    return <p>Loading font details...</p>;
+    return "";
   }
 
   return (

@@ -13,6 +13,7 @@ const SearchBar = () => {
         onChange={(e) => setSearchTerm(e.target.value)} 
         placeholder="Search for fonts..." 
         className="responsive-search-input"
+        style={{marginBottom:"8em"}}
       />
     </div>
   );

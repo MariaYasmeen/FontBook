@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { getFonts } from '../Functions/getGFont';
+import Loader from '../Components/Loader';
 
 export const FontContext = createContext();
 
@@ -7,6 +8,7 @@ export const FontProvider = ({ children }) => {
   const [fonts, setFonts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(true); // Loading state
   const fontsPerPage = 100;
 
   useEffect(() => {
@@ -23,6 +25,8 @@ export const FontProvider = ({ children }) => {
       } catch (error) {
         console.error('Error fetching fonts:', error);
         setFonts([]);
+      } finally {
+        setLoading(false); // Set loading to false after fonts are fetched
       }
     };
 
@@ -42,6 +46,11 @@ export const FontProvider = ({ children }) => {
   const loadMoreFonts = () => {
     setPage(prevPage => prevPage + 1);
   };
+
+  // Display the Loader if fonts are still loading
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <FontContext.Provider value={{ fonts, searchTerm, setSearchTerm, page, loadMoreFonts }}>

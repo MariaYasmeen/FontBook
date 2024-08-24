@@ -9,6 +9,7 @@
   text-decoration: none;
   color: black;
 }
+
 /* Container for the search bar */
 .responsive-search-container {
   display: flex;
@@ -17,12 +18,9 @@
   justify-content: center;
   width: 100%;
 }
-
-/* Search input field */
 .responsive-search-input {
   width: 100%;
   max-width: 900px;
-  margin: 19px;
   padding: 20px;
   border-radius: 35px;
   border: 2px solid #ccc; box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
@@ -30,6 +28,7 @@
   transition: width 0.3s ease, font-size 0.3s ease;
   text-align: center;
 }
+
 
 
 /* Container for the font section */
@@ -41,12 +40,6 @@
   width: 60%;
 }
 
-/* Category selector styling */
-.category-selector {
-  width: 100%;
-  max-width: 600px; /* Adjust this value based on your design */
- 
-}
 
 /* Select dropdown styling */
 #font-category {
@@ -58,6 +51,7 @@
   font-size: 13px;
   transition: border-color 0.3s ease;
 }
+
 @media (max-width: 910px) {
  
   #font-category {
@@ -120,7 +114,7 @@
 
 
 .font-slider {
-  margin-right: 20px;
+  margin: 10px;
   width: 280px;
 }
 
@@ -292,4 +286,23 @@
 /* Icon styling */
 .fas {
   font-size: 1.2em; /* Larger icon size */
+}
+
+/* Loader.css */
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+  z-index: 9999; /* Ensure it's on top of everything */}
+
+.loader-image {
+  max-width: 200px; 
+  transition: 2s all ease;
 }

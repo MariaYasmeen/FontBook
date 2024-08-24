@@ -5,7 +5,7 @@ import FontCard from '../Components/FontCard';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../HeroSection/Hero';
 import SearchBar from '../Components/SearchBar';
-import FontCategory from '../Components/FontCategory';
+import Loader from '../Components/Loader';
 
 const FontList = () => {
   const { fonts, searchTerm, setSearchTerm, page, loadMoreFonts } = useContext(FontContext);
@@ -43,9 +43,9 @@ const FontList = () => {
       <Hero />
       
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <FontCategory />
+   
     
-      <div className="">
+      <div className="fontlist-container">
         <div className="font-list">
           {visibleFonts.length > 0 ? (
             visibleFonts.map((font, index) => (
@@ -57,7 +57,7 @@ const FontList = () => {
               />
             ))
           ) : (
-            <p>Loading fonts...</p>
+           " OOPs! No such font Style found."
           )}
         </div>
       </div>
