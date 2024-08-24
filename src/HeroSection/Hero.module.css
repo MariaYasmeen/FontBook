@@ -176,9 +176,9 @@ p {.almendra-regular {
 
   .hicss {
     display: inline-block;
-    color: rgb(247, 143, 9);
-    font-family: 'Righteous', serif;
-    font-size: 1.2em; 
+    color: rgb(247, 143, 9); 
+    letter-spacing: 5px;
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-shadow: .04em .1em 0 rgb(2, 4, 17);
     }
     .hicss:after {

@@ -19,7 +19,7 @@ const BookmarkPage = () => {
       </Helmet>
       <Navbar />
       <div className="bookmarks-page">
-        <h2 className='text-center' style={{ padding: "40px", fontSize: "22px" }}>Your FontBooks's Bookmarks</h2>
+        <h2 className='text-center' style={{ padding: "40px", fontSize: "22px" }}>Your FontBook's Bookmarks</h2>
         <div className="font-list">
           {bookmarks.length > 0 ? (
             bookmarks.map((font, index) => (

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { BookmarkContext } from '../Context/BookmarkContext';
 import './Components.css';
 
@@ -17,10 +17,12 @@ const copyToClipboard = (text) => {
 const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
   const fontDetailsUrl = `http://localhost:3000/fonts/${heading.replace(/ /g, '+')}`;
 
-  const getRandomColor = () => {
+  // Generate a random color once per card and memoize it
+  const cardBackgroundColor = useMemo(() => {
     const randomIndex = Math.floor(Math.random() * backgroundColors.length);
     return backgroundColors[randomIndex];
-  };
+  }, [heading]); // Dependency array ensures the color is set once per card
+
   const { bookmarks, addToBookmarks, removeFromBookmarks } = useContext(BookmarkContext);
 
   // Check if the font is already in the bookmarks
@@ -46,7 +48,7 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
 
   return (
     <div className="cardcontainer">
-      <div className="card cardscontainer" style={{ backgroundColor: getRandomColor() }}>
+      <div className="card cardscontainer" style={{ backgroundColor: cardBackgroundColor }}>
         <div className="card-header">
           <button onClick={handleToggleBookmarks} className='bookmarkbtn bookmark-button'>
             <i className={isBookmarked ? "fa-solid fa-bookmark iconcss" : "fa-regular fa-bookmark iconcss"} style={{color:"black"}}></i>
@@ -59,7 +61,7 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
             <ul className="dropdown-menu dropdowntxt">
               <li>
                 <button
-                  className="dropdown-item font-link btn"
+                  className="dropdown-item font-link"
                   onClick={(e) => {
                     e.stopPropagation(); // Prevent the card link from being triggered
                     openInNewTab(fontDetailsUrl); // Open the details page in a new tab
@@ -79,13 +81,13 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
                 </a>
               </li>
               <li>
-                <button onClick={handleToggleBookmarks}>
+                <button onClick={handleToggleBookmarks} style={{border:"none"}} className="dropdown-item font-link">
                   {isBookmarked ? 'Unbookmark this font' : 'Bookmark this font'}
                 </button>
               </li>
               <li>
                 <button 
-                  className="dropdown-item"
+                  className="dropdown-item font-link" 
                   onClick={(e) => {
                     e.stopPropagation();
                     copyToClipboard(fontDetailsUrl);

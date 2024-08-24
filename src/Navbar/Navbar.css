@@ -10,6 +10,13 @@
   height: 4em;
 }
 
+.top-navbar{
+  height: 27px;
+  font-size: 13px;
+  background-color: black;
+  color: whitesmoke;
+  padding: 3px;
+}
 
 .fa-iconcss{
   display: flex;
@@ -30,4 +37,88 @@
   padding:4px 6px;
   font-size: 12px;
   line-height: 1;
+}
+
+
+/* Ensure dropdown menu does not show by default */
+.navbar .dropdown-menu {
+  display: none; /* Hide dropdown menu by default */
+  position: absolute; /* Position it absolutely to align it correctly */
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Show dropdown menu on hover */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block; /* Show dropdown menu when parent is hovered */
+}
+
+/* Optional: Adjust dropdown menu position */
+.navbar .dropdown-menu {
+  top: 100%; /* Position below the dropdown toggle */
+  left: 0; /* Align with the left edge of the toggle */
+  padding: 0; /* Optional: remove padding if needed */
+  margin: 0; /* Optional: remove margin if needed */
+}
+
+/* Base styles for the navbar */
+.navbar {
+  background-color: white; /* Default background color */
+}
+
+/* Navbar text color */
+.navbar-nav .nav-link,
+.dropdown-menu .dropdown-item,
+.navbar-brand,
+.fa-iconcss i {
+  color: black; /* Default text color */
+}
+
+/* Style for the toggler button */
+.navbar-toggler {
+  border-color: black; /* Border color for the toggler */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-width='2' d='M5 7h20M5 15h20M5 23h20'/%3E%3C/svg%3E");
+}
+
+/* Styles applied only when the navbar is collapsed */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: white; /* Background color when collapsed */
+   z-index: 100;
+   height: 300px;
+    padding: 1rem; /* Optional padding */
+  }
+
+  /* Text color when navbar is collapsed */
+  .navbar-collapse .navbar-nav .nav-link,
+  .navbar-collapse .dropdown-menu .dropdown-item {
+    color: white; /* Text color when collapsed */
+  }
+
+  .navbar-collapse .dropdown-toggle {
+    color: white; /* Dropdown toggle color when collapsed */
+  }
+
+  .navbar-collapse .dropdown-menu .dropdown-item:hover {
+    background-color: gray; /* Background color on hover */
+    color: white; /* Ensure text remains white on hover */
+  }
+
+  .navbar-brand,
+  .fa-iconcss i {
+    color: white; /* Ensure brand and icons are visible when collapsed */
+  }
+
+  .navbar-toggler {
+    border-color: white; /* Border color for the toggler when collapsed */
+  }
+  .navbar-toggler:focus {
+  box-shadow: none; /* Remove box-shadow (focus ring) */
+  outline: none; /* Ensure no outline is shown */
+}
+.top-navbar{
+  display: none;
+}
 }

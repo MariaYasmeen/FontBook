@@ -53,7 +53,7 @@ const FontDetails = () => {
       <Navbar />
       <main>
         <div className="px-4 py-5 my-5 text-center" style={{ fontFamily: fontDetails.family }}>
-          <h5 className='glyphheading'>Font - {fontDetails.family}</h5>
+          <h5 className='glyphheading'>fonts - {fontDetails.family}</h5>
           <p className="display-5 text-body-emphasis" style={{ fontSize: '14em', textDecoration: 'none' }}>
             {fontDetails.family}
           </p>

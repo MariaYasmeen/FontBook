@@ -179,3 +179,15 @@ font-weight: bold;
   cursor: not-allowed;
   opacity: 0.5;
 }
+
+.category-page-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.font-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+

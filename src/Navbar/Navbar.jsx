@@ -13,7 +13,12 @@ export const Navbar = () => {
 
   <>
 
-   
+<nav class="top-navbar navbar-expand-lg navbarheight " aria-label="Eighth navbar example" >
+    <div class=" topnavbar-txt  ">
+<p className="text-center">Get 1000s of free fonts with FontBook<span style={{color:"black"}}> navbar-expand-lg navbarheigh</span>fontbook@gmail.com<span style={{color:"black"}}>navbarsExample07</span>+92 3360552743</p>
+    </div>
+  <hr />
+  </nav>
       <nav class="navbar navbar-expand-lg navbarheight " aria-label="Eighth navbar example" >
     <div class="container  ">
       <Link class="navbar-brand " to="/" style={{color:"black", fontSize:"2.4em"}}>FontBook</Link>
@@ -24,22 +29,23 @@ export const Navbar = () => {
       <div class="collapse navbar-collapse  " id="navbarsExample07">
         <ul class="navbar-nav text-center navbarcss ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Explore</a>
+            <Link to="" class="nav-link active">Explore</Link>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">font Categories</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><Link className="dropdown-item" to="/category/serif">Serif</Link></li>
+<li><Link className="dropdown-item" to="/category/sans-serif">Sans-Serif</Link></li>
+<li><Link className="dropdown-item" to="/category/display">Display</Link></li>
+<li><Link className="dropdown-item" to="/category/handwriting">Handwriting</Link></li>
+<li><Link className="dropdown-item" to="/category/monospace">Monospace</Link></li>
+
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">docs</a>
+          <Link to="" class="nav-link active">DOCS</Link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">contact</a>
-          </li>
+          
         
          
         </ul>
