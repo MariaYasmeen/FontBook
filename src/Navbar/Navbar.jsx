@@ -20,7 +20,7 @@ export const Navbar = () => {
       </nav>
       <nav className="navbar navbar-expand-lg navbarheight" aria-label="Eighth navbar example">
         <div className="container">
-          <Link className="navbar-brand" to="/" style={{color:"black", fontSize:"2.4em"}}><img src="../LogoImg.png" style={{width:"190px"}} alt="FontBook Logo Image"></img></Link>
+          <Link className="navbar-brand" to="/" style={{color:"black", fontSize:"2.4em"}}><img src="../LogoImg.png" style={{width:"190px"}} alt="FontBook Logo"></img></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
