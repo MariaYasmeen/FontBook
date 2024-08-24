@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Components.css';
 
 const TextResizer = ({fontFamily}) => {
-  const [text, setText] = useState('Think 100 times before you take a decision, But once that decision is taken, stand by it as one man.'); // State for input text
+  const [text, setText] = useState('Failure is a word unknown to me.'); // State for input text
   const [fontSize, setFontSize] = useState(18); // State for font size
   const fontSizeOptions = [8, 12, 14, 18, 20, 24, 32, 40, 64, 96, 120, 184, 200];
 

@@ -19,6 +19,7 @@
   width: 100%;
 }
 .responsive-search-input {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
   width: 100%;
   max-width: 900px;
   padding: 20px;
@@ -92,25 +93,6 @@
   padding: 20px;
 }
 
-.font-size-controls {
-  display: ruby;
-  align-items: center;
-}
-.input-slider-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.text-input {
-  margin-right: 13px;
-  padding: 18px;
-  border: 1px solid #ccc;
-  border-radius: 29px;
-  flex: 5 8;
-  width: 900px;
-}
 
 
 .font-slider {
@@ -142,9 +124,6 @@
 .text-display-box{
   padding: 35px;
 }
-/* text editor css*/
-
-/* Reset default styles */
 * {
   margin: 0;
   padding: 0;

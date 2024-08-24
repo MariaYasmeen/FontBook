@@ -16,12 +16,12 @@ const FontDetails = () => {
   const [fontDetails, setFontDetails] = useState(null);
   const { fonts } = useContext(FontContext); // Get fonts from FontContext
 
-  const typetestertxt = "Character, courage, industry, and perseverance are the four pillars on which the whole edifice of human life can be built and failure is a word unknown to me.";
+  const typetestertxt = "Think 100 times before you take a decision, But once that decision is taken, stand by it as one man.";
 
   // Function to dynamically load the font
   const loadFont = (fontFamily) => {
     const link = document.createElement('link');
-    link.href = `https://fonts.googleapis.com/css2?family=${fontFamily.replace(/ /g, '+')}`;
+    link.href = `https://fonts.googleapis.com/css2?family=${fontFamily.replace(/ /g, '-')}`;
     link.rel = 'stylesheet';
     document.head.appendChild(link);
   };
@@ -30,7 +30,7 @@ const FontDetails = () => {
     const fetchFontDetails = async () => {
       try {
         const fontsData = await getFonts();
-        const font = fontsData.find(f => f.family.replace(/ /g, '+') === fontFamily);
+        const font = fontsData.find(f => f.family.replace(/ /g, '-') === fontFamily);
         setFontDetails(font);
         loadFont(fontFamily); // Load the font when the component mounts
       } catch (error) {

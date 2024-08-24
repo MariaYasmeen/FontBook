@@ -16,7 +16,7 @@ const copyToClipboard = (text, callback) => {
 
 const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
   const [copyText, setCopyText] = useState('Copy URL');
-  const fontDetailsUrl = `http://localhost:3000/fonts/${heading.replace(/ /g, '+')}`;
+  const fontDetailsUrl = `http://localhost:3000/fonts/${heading.replace(/ /g, '-')}`;
 
   // Generate a random color once per card and memoize it
   const cardBackgroundColor = useMemo(() => {

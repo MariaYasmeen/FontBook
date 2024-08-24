@@ -26,7 +26,7 @@ const CategoryPage = () => {
     const preloadFonts = (fontBatch) => {
       fontBatch.forEach(font => {
         const link = document.createElement('link');
-        link.href = `https://fonts.googleapis.com/css2?family=${font.family.replace(/ /g, '+')}:wght@400;700&display=swap`;
+        link.href = `https://fonts.googleapis.com/css2?family=${font.family.replace(/ /g, '-')}:wght@400;700&display=swap`;
         link.rel = 'stylesheet';
         document.head.appendChild(link);
       });
@@ -54,7 +54,7 @@ const CategoryPage = () => {
                 key={index}
                 backgroundColors={backgroundColors}
                 heading={font.family}
-                googleFontLink={`https://fonts.google.com/specimen/${font.family.replace(/ /g, '+')}?preview.layout=grid`}
+                googleFontLink={`https://fonts.google.com/specimen/${font.family.replace(/ /g, '-')}?preview.layout=grid`}
               />
             ))
           ) : (

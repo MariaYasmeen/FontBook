@@ -26,7 +26,7 @@ const TextEditor = ({fontFamily}) => {
 
   return (
     <div className="text-editor-container">
-        <h1 className='text-center'>Text Editor </h1>
+        <h1 className='text-center ' style={{fontFamily:"'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"}}>Text Editor </h1>
       <div className="toolbar" >
         <p>{fontFamily}</p>
         <button onClick={() => wrapSelectedText('b')} className="toolbar-button">

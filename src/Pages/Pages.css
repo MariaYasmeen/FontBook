@@ -11,7 +11,7 @@
     align-items: center;
   }
   .responsive-font {
-    font-size: 15vw; /* Base font size relative to viewport width */
+    font-size: 15vw; 
   }
   .desctxt{
       font-size: 2.4em;
@@ -69,11 +69,7 @@
     justify-content: center;
     gap: 30px;
     align-items: center;
-}
-
-*/
-  
-  
+} 
   .font-link {
     color: black;
     text-decoration: none;
@@ -200,26 +196,6 @@ font-weight: bold;
   
 }
 
-.category-page-container {
-  padding: 20px;
-  text-align: center;
-}
-
-
-
-.font-display-page {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-.font-cards-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
 
 .previewfont-cards {
   width: 100%;
@@ -281,11 +257,3 @@ font-weight: bold;
   border: 1px solid #ddd;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
-.font-cards-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-

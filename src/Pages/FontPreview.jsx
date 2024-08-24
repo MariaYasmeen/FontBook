@@ -35,7 +35,7 @@ const FontPreview = () => {
             <div key={index} className="previewfont-cards" style={{ fontFamily: font.family }}>
               <p className="font-sample">{searchTerm || "Expect the best, prepare for the worst."}</p>
               <a
-                href={`http://localhost:3000/fonts/${font.family.replace(/ /g, '+')}`}
+                href={`http://localhost:3000/fonts/${font.family.replace(/ /g, '-')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-link"
