@@ -16,17 +16,17 @@ const SearchPage = () => {
     <>
     <Navbar />
     <div className="text-center">
-    <h5 className=' '>Search Fonts</h5 >
-        <div className="searchpageflx ">
+    <h5 className=' ' style={{padding:"30px", fontSize:"14px"}}>Search from FontBook</h5 >
+    <div className="input-container">
       <input
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search for fonts..."
-        className="search-bar text-center "
+        placeholder="Search for font Style.."
+        className="font-input"
       />
       </div>
-      <div className="search-results font-list">
+      <div className="search-results">
         <div className="font-list">
         {filteredFonts.length > 0 ? (
           filteredFonts.map(font => (

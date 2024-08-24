@@ -21,7 +21,7 @@ const FontsYouMayLike = ({ currentFont }) => {
     // Load the selected fonts dynamically
     filteredFonts.forEach(font => {
       const link = document.createElement('link');
-      link.href = `https://fonts.googleapis.com/css2?family=${font.family.replace(/ /g, '-')}`;
+      link.href = `https://fonts.googleapis.com/css2?family=${font.family.replace(/ /g, '+')}`;
       link.rel = 'stylesheet';
       document.head.appendChild(link);
     });

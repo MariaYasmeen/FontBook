@@ -54,7 +54,7 @@ const CategoryPage = () => {
                 key={index}
                 backgroundColors={backgroundColors}
                 heading={font.family}
-                googleFontLink={`https://fonts.google.com/specimen/${font.family.replace(/ /g, '-')}?preview.layout=grid`}
+                googleFontLink={`https://fonts.google.com/specimen/${font.family.replace(/ /g, '+')}?preview.layout=grid`}
               />
             ))
           ) : (
