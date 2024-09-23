@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import FontCard from './FontCard'; // Import the FontCard component
+ import FontCard from './FontCard'; // Import the FontCard component
 import { FontContext } from '../Context/FontContext'; // Import FontContext
 
 const FontsYouMayLike = ({ currentFont }) => {
@@ -27,8 +27,8 @@ const FontsYouMayLike = ({ currentFont }) => {
     });
   }, [filteredFonts]);
 
-  return (
-    <div className="fonts-you-may-like font-list">
+  return (<div className="font-grid-container">
+        <div className="font-card">
       {filteredFonts.map(font => (
         <FontCard 
           key={font.family} 
@@ -37,6 +37,7 @@ const FontsYouMayLike = ({ currentFont }) => {
           googleFontLink={font.link}
         />
       ))}
+    </div>
     </div>
   );
 };
