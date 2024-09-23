@@ -16,7 +16,12 @@
   .desctxt{
       font-size: 2.4em;
   }
-  
+
+.font-card{
+  display: grid;
+grid-template-columns:  repeat(auto-fit, minmax(400px, 1fr));
+gap: 0px;
+justify-content: center;}
   /* Adjust font size for different screen sizes */
   @media (max-width: 1200px) {
     .responsive-font {

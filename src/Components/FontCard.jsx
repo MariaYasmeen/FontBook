@@ -57,7 +57,7 @@ const FontCard = ({ heading, googleFontLink, backgroundColors }) => {
   };
 
   return (
-    <div className="cardcontainer">
+    <div className="">
       <div className="card cardscontainer" style={{ backgroundColor: cardBackgroundColor }}>
         <div className="card-header">
           <button onClick={handleToggleBookmarks} className='bookmarkbtn bookmark-button'>

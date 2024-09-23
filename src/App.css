@@ -1,7 +1,7 @@
 .cardscontainer {
-  position: relative;
-  max-width: 415px ;
+  margin: 20px !important;
   border-radius: 10px;
+  align-items: center !important;
   border: none !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -52,7 +52,7 @@
   left: auto;
   min-width: 100px;
 }
-.card{
+.card{  
   border: none;
 }
 .card-body {
@@ -152,3 +152,5 @@ i{
     justify-content: center;
     gap: 0px;
 }
+
+ 

@@ -44,8 +44,8 @@ const FontList = () => {
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
    
     
-      <div className="fontlist-container">
-        <div className="font-list">
+      <div className="font-grid-container">
+        <div className="font-card">
           {visibleFonts.length > 0 ? (
             visibleFonts.map((font, index) => (
               <FontCard 
